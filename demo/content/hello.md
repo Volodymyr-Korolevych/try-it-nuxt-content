@@ -1,0 +1,224 @@
+---
+title: Try-It-Component
+description: 'Introduction/demo for TryIt Component'
+---
+
+## TryIt Component for nuxt/content
+
+TriIt component will add capability to evaluate/run JavaScript code, which author of the content will place on the page to demonstrate text with code snippets.
+The component is used on markdown content and doesn't break usual conventions  
+
+Component development was inspired by MDN live examples and uses CodeMirror library and console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) 
+TryIt component doesn't require special markdown fore JavaScript code snippets. Should be used usual [Codeblocks](https://content.nuxtjs.org/writing#codeblocks) 
+<try-it-img src="nuxt-content.png" alt="ok"></try-it-img>
+
+```javascript[JavaScript]
+'use strict'
+
+function sayHi() {
+  alert('Hello!')
+}
+window.sayHi()
+```
+
+With TryIt Block it will look like
+
+```javascript[JavaScript]
+'use strict'
+
+function sayHi() {
+  alert('Hello!')
+}
+window.sayHi()
+```
+<try-it-block id="ex0"></try-it-block>
+
+
+## Nuxt JS custom module TryIt
+
+
+
+sdf
+
+```html[example]
+<html>
+ <head>
+  <title> Сторінка з прикладом коду JavaScript </title>
+  <script>
+alert ( "Hello World!");   
+  </script>
+ </head>
+ <body>
+Це текст основної сторінки  
+ </body>
+</html>
+```
+<try-it-button id="exh0"></try-it-button>
+
+sdf
+```html[example]
+  <html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{ message }}
+        </div>
+        <script>
+            var app1 = new Vue({
+            el: '#app',
+            data: {
+                message: 'Привіт всім!'
+            }
+            })
+        </script>
+    </body>
+</html>
+```
+<try-it-button id="exh1"></try-it-button>
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+sdf
+
+
+
+## Writing content
+
+Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
+
+## Fetching content
+
+Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+
+```javascript[JavaScript]
+[4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
+  return accumulator + currentValue;
+});
+```
+<try-it-button id="ex1"></try-it-button>
+
+ert
+ert
+
+ert
+ert
+
+```javascript[JavaScript]
+[4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
+  return accumulator + currentValue;
+});
+```
+<try-it-block id="ex2"></try-it-block>
+
+
+## Displaying content
+
+Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
