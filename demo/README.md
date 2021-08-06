@@ -1,27 +1,37 @@
-# nuxt-stydy-modules
+# Demo for Try-It module for nuxt/content
 
 ## Build Setup
 
+Try-It module is created specifically for nuxt/content environment.
+Therefore demo contains simply nuxt/content build with one .md file.
+To run demo you will required to execute all the usual steps, as shown hereafter
+
 ```bash
 # install dependencies
+$ cd demo
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:4040
 $ yarn dev
 
-# build for production and launch server
+# check Try-It on production build 
 $ yarn build
 $ yarn start
 
-# generate static project
+# check Try-It on static project
 $ yarn generate
 ```
+One-page demo will contain a md-document as a main page, which will contain javascript and html snippets.
+The document is self-explanatory and shows all possible variants of Try-It module features.  
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+For users to familiarize with nuxt and nuxt/content check out the  [nuxt documentation](https://nuxtjs.org) and [nuxt/content documentation](https://content.nuxtjs.org)
+
+## Explore Try It feature
+
+
 
 ## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
 ### `assets`
 

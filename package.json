@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-content-tryit-js",
+  "name": "tryIt",
   "version": "1.0.0",
   "description": "try-it-block (js, html) for nuxt/content",
   "keywords": [
@@ -10,13 +10,13 @@
     "content",
     "tryit"
   ],
-  "homepage": "https://github.com/Volodymyr-Korolevych/project#readme",
+  "homepage": "https://github.com/Volodymyr-Korolevych/try-it-nuxt-content#readme",
   "contributors": [
     {
       "name": "Volodymyr Korolevych"
     }
   ],
-  "repository": "https://github.com/Volodymyr-Korolevych/project",
+  "repository": "https://github.com/Volodymyr-Korolevych/try-it-nuxt-content",
   "license": "MIT",
   "private": true,
   "files": [
