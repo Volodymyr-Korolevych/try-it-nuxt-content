@@ -39,10 +39,11 @@ export default {
     click () {
       const url = new URL(location.href)
       const elem = this.$refs[this.myId].previousElementSibling
-      const classes = [...elem.querySelector('pre code').classList].join(' ')
-      if (classes.includes('language-html')) {
+      const classes = [...elem.querySelector('pre code').classList]
+      const classes_string = classes.concat([...elem.querySelector('pre').classList]).join(' ')
+      if (classes_string.includes('language-html')) {
         this.lang = 'html'
-      } else if (classes.includes('language-javascript')) {
+      } else if (classes_string.includes('language-javascript') || classes_string.includes('language-js')) {
         this.lang = 'javascript'
       } else {
         this.lang = false
