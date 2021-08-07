@@ -39,16 +39,8 @@ export default {
     click () {
       const url = new URL(location.href)
       const elem = this.$refs[this.myId].previousElementSibling
-      const classes = [...elem.querySelector('pre code').classList]
-      const classes_string = classes.concat([...elem.querySelector('pre').classList]).join(' ')
-      if (classes_string.includes('language-html')) {
-        this.lang = 'html'
-      } else if (classes_string.includes('language-javascript') || classes_string.includes('language-js')) {
-        this.lang = 'javascript'
-      } else {
-        this.lang = false
-        return
-      }
+      this.lang = this.$tryIt.langDetect(elem)
+
       const text = elem.querySelector('pre code').textContent
       this.$store
         .dispatch('tryIt/setCodeText', {

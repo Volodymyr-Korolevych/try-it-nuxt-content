@@ -76,7 +76,7 @@ sdf
     </body>
 </html>
 ```
-<try-it-button id="exh1"></try-it-button>
+<try-it-block id="exh1"></try-it-block>
 
 sdf
 

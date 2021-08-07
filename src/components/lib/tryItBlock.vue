@@ -1,7 +1,7 @@
 <template>
   <div :id="myId" :ref="myId" class="p-2 w-full">
     <div style="font-size: 15px">
-      <client-only>
+      <client-only placeholder="...wait">
         <codemirror v-model="codeText" class="codemirror" :options="cmOption" />
       </client-only>
     </div>
@@ -43,6 +43,7 @@ export default {
         theme: 'default'
       },
       baseElem: {},
+      lang: false,
       codeText: '',
       myId: 'try-it-' + this.id,
       options: this._options
@@ -53,6 +54,7 @@ export default {
       this.baseElem = this.$refs[this.myId].previousElementSibling
       this.baseElem.style.display = 'none'
       this.codeText = this.baseElem.querySelector('pre code').textContent
+      this.lang = this.$tryIt.langDetect(this.baseElem)
     })
     if (this.$route.fullPath.includes('back=')) {
       const m = this.$route.fullPath.split('back=')
@@ -68,7 +70,7 @@ export default {
   },
   methods: {
     execute () {
-      const html = this.$tryIt.runCode(this.codeText)
+      const html = this.lang === 'html' ? this.codeText : this.$tryIt.runCode(this.codeText)
       this.$tryIt.iFrameText(this.$refs.targetCode, html)
     },
     reset () {
@@ -80,6 +82,7 @@ export default {
       this.$store
         .dispatch('tryIt/setCodeText', {
           code: this.codeText,
+          lang: this.lang,
           back: {
             url: url.pathname,
             ref: this.myId

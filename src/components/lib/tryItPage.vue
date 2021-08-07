@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex flex-row">
     <div class="w-1/2 p-4">
-      <client-only>
+      <client-only placeholder="...wait">
         <codemirror v-model="cText" class="codemirror" :options="cmOption" />
       </client-only>
     </div>
@@ -29,12 +29,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import { codemirror } from 'vue-codemirror'
-import 'codemirror/lib/codemirror.css'
 export default {
-  components: {
-    codemirror
-  },
   data () {
     return {
       cmOption: {

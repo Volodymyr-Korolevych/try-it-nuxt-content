@@ -35,7 +35,20 @@ export const iFrameText = (elem, text) => {
   frame.document.close()
   return false
 }
+
 export const iFrameReset = (elem) => {
   elem.querySelector('iframe').remove()
   elem.appendChild(document.createElement('iframe'))
+}
+
+export const langDetect = (elem) => {
+  const classes = [...elem.querySelector('pre code').classList]
+  const classes_string = classes.concat([...elem.querySelector('pre').classList]).join(' ')
+  if (classes_string.includes('language-html')) {
+    return 'html'
+  } else if (classes_string.includes('language-javascript') || classes_string.includes('language-js')) {
+    return 'javascript'
+  } else {
+    return false
+  }
 }

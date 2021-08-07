@@ -15,7 +15,8 @@ export default function (moduleOptions) {
     'components/index.js',
     'store/index.js',
     'plugins/index.js',
-    // 'plugins/codemirror.js'
+    'plugins/codemirror.client.js'
+    
   ]
   for (const pathString of pluginsToSync) {
     this.addPlugin({
