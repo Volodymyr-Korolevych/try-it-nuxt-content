@@ -29,7 +29,12 @@
 </template>
 <script>
 import { mapState } from 'vuex'
+import { codemirror } from 'vue-codemirror'
+import 'codemirror/lib/codemirror.css'
 export default {
+  components: {
+    codemirror
+  },
   data () {
     return {
       cmOption: {
