@@ -59,7 +59,7 @@ export default {
 <style>
 .butn {
   @apply block bg-gray-300 text-gray-800;
-  @apply border border-solid border-gray-400;
+  @apply border-0 border-solid border-gray-400;
   @apply p-2 m-2 ml-0 w-40 h-8 -mt-6;
   @apply text-base leading-none cursor-pointer;
 }
