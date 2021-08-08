@@ -96,7 +96,7 @@ export default {
 </script>
 <style>
 .CodeMirror {
-  @apply h-auto border border-solid border-gray-400;
+  @apply h-auto border-0 border-solid border-gray-400;
 }
 .butn {
   @apply block bg-gray-300 text-gray-800;
