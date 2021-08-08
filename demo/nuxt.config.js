@@ -22,8 +22,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // ...
-    'codemirror/lib/codemirror.css',
-    'codemirror/theme/base16-dark.css'
+   // 'codemirror/lib/codemirror.css',
+   // 'codemirror/theme/base16-dark.css'
     // more styles...
   ],
 

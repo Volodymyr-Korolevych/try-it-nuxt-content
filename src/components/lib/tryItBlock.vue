@@ -55,6 +55,7 @@ export default {
       this.baseElem.style.display = 'none'
       this.codeText = this.baseElem.querySelector('pre code').textContent
       this.lang = this.$tryIt.langDetect(this.baseElem)
+      this.cmOption.mode = 'text/' + this.lang
     })
     if (this.$route.fullPath.includes('back=')) {
       const m = this.$route.fullPath.split('back=')
