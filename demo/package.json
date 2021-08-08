@@ -11,6 +11,9 @@
   ],
   "scripts": {
     "dev": "nuxt --port 4040",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
     "docs": "nuxt docs",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && lerna publish",

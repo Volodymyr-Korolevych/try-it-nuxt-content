@@ -5,13 +5,16 @@ description: 'Introduction/demo for TryIt Component'
 
 ## TryIt Component for nuxt/content
 
-TriIt component will add capability to evaluate/run JavaScript code, which author of the content will place on the page to demonstrate text with code snippets.
-The component is used on markdown content and doesn't break usual conventions  
+Try-It component is useful for technical writers who use code snippets to demonstrate language peculiarities. 
+ <try-it-img src="nuxt-content.png" alt="ok"></try-it-img> 
+TriIt component adds capability to evaluate/run JavaScript code (or HTML snippet), which author of the content will place on the page to demonstrate text with code examples.
+The component is used on markdown content and doesn't break usual style of markdown.
 
-Component development was inspired by MDN live examples and uses CodeMirror library and console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) 
-TryIt component doesn't require special markdown fore JavaScript code snippets. Should be used usual [Codeblocks](https://content.nuxtjs.org/writing#codeblocks) 
-<try-it-img src="nuxt-content.png" alt="ok"></try-it-img>
+Component development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.
 
+TryIt component doesn't require special preparation for JavaScript or HTML code snippets. For making it work it should be used usual codeblocks (see [link](https://content.nuxtjs.org/writing#codeblocks)). 
+
+For example:
 ```javascript[JavaScript]
 'use strict'
 
@@ -20,8 +23,11 @@ function sayHi() {
 }
 window.sayHi()
 ```
+and just ater code-block it should be placed try-it component:
 
-With TryIt Block it will look like
+- \<try-it-block id="1">\</try-it-block>
+
+That's all. With TryIt Block it will look like following:
 
 ```javascript[JavaScript]
 'use strict'

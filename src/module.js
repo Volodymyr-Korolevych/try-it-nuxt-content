@@ -30,10 +30,11 @@ export default function (moduleOptions) {
   const path_store = 'store/index.js'
   try {
     if (!existsSync(path_store)) {
-      console.log('No file "store/index.js". Create empty file ')
+      console.log('No file "store/index.js". Create empty file. PLEASE RESTART, VUEX is REQUIRED!')
       if (!existsSync('store')) mkdirSync('store');
       openSync(path_store, 'a')
-    }
+      process.exit() 
+    } 
   } catch(err) {
     console.error('try to catch file "store/index.js"')
   }
