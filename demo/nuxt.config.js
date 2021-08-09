@@ -1,11 +1,7 @@
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  // target: 'static',
-  ssr: true,
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
   head: {
-    title: 'nuxt-stydy-modules',
+    title: 'tryIt Demo',
     htmlAttrs: {
       lang: 'en'
     },
@@ -19,34 +15,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    // ...
-   // 'codemirror/lib/codemirror.css',
-   // 'codemirror/theme/base16-dark.css'
-    // more styles...
-  ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    //  { src: '~plugins/codemirror', mode: 'client' }
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss'
   ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '../../src'
   ],
@@ -62,11 +35,8 @@ export default {
       name: 'code'
     }
   },
-
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  content: {
+  },
   build: {
   },
   tailwindcss: {
