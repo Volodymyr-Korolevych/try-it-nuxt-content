@@ -1,5 +1,9 @@
 export default {
   target: 'static',
+  ssr: true,
+  generate: {
+    cache: false
+  },
   head: {
     title: 'tryIt Demo',
     htmlAttrs: {

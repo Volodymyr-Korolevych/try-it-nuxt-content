@@ -35,6 +35,7 @@ export default {
       cmOption: {
         tabSize: 4,
         styleActiveLine: true,
+        lineWrapping: true,
         lineNumbers: true,
         line: true,
         mode: 'text/javascript',
