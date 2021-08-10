@@ -6,7 +6,7 @@ export default function (moduleOptions) {
   // get all options for the module
   const options = {
     ...moduleOptions,
-    ...this.options.try-it
+    ...this.options.tryIt
   }
   const namespace = 'tryIt'
 
