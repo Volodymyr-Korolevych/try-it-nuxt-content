@@ -1,20 +1,20 @@
 <template>
-  <div :id="myId" :ref="myId" class="p-2 w-full">
-    <div style="font-size: 15px">
+  <div class="try-it-block" :id="myId" :ref="myId" >
+    <div class="codemirror-wrapper">
       <client-only placeholder="...wait">
         <codemirror v-model="codeText" class="codemirror" :options="cmOption" />
       </client-only>
     </div>
-    <div style="display: flex; -items: center">
-      <div style="align-self: flex-start; width: auto">
+    <div class="btns-and-iframe">
+      <div class="buttons">
         <button class="butn" @click="execute">
-          {{ options.block.buttons[0] }}
+          {{ options.buttons.run }}
         </button>
         <button class="butn" @click="reset">
-          {{ options.block.buttons[1] }}
+          {{ options.buttons.reset }}
         </button>
         <button class="butn" @click="full">
-          {{ options.block.buttons[2] }}
+          {{ options.buttons.fullScreen }}
         </button>
       </div>
       <div id="iframe-wrapper" ref="targetCode">
@@ -51,8 +51,11 @@ export default {
     }
   },
   async mounted () {
+    console.log("mount try-it-block, id=" + this.id)
     await this.$tryIt.findEl(this.$refs).then(() => {
       this.baseElem = this.$refs[this.myId].previousElementSibling
+      let x = this.baseElem
+      x.parentNode.removeChild(x);
       this.baseElem.style.display = 'none'
       this.codeText = this.baseElem.querySelector('pre code').textContent
       this.lang = this.$tryIt.langDetect(this.baseElem)
@@ -90,38 +93,11 @@ export default {
             ref: this.myId
           }
         })
-        .then(_ => this.$router.push('/' + this.options.page.name))
+        .then(_ => this.$router.push('/' + this.options.page))
     }
   }
 }
 </script>
 <style>
-.CodeMirror {
-  @apply h-auto border-0 border-solid border-gray-400;
-}
-.butn {
-  @apply block bg-gray-300 text-gray-800;
-  @apply border-0 border-solid border-gray-400;
-  @apply p-2 m-2 ml-0 w-24 h-8;
-  @apply text-base leading-none cursor-pointer;
-}
-.butn:hover {
-  @apply bg-gray-700 text-white;
-}
-#iframe-wrapper {
-  display: flex;
-  flex: 10 150px;
-  align-items: center;
-  position: relative;
-  display: inline-block;
-  background-color: #fff;
-  margin: 0;
-  padding: 0 5px;
-  border: 1px solid #eaf2f4;
-  box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.1);
-  height: 120px;
-}
-#iframe-wrapper iframe {
-  width: 100%;
-}
+@import "~/assets/css/try-it.css";
 </style>

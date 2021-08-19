@@ -4,10 +4,26 @@ const { readdirSync, existsSync, openSync, mkdirSync } = require('fs')
 
 export default function (moduleOptions) {
   // get all options for the module
-  const options = {
-    ...moduleOptions,
-    ...this.options.tryIt
+   
+  let options = {
+    buttons: {
+      tryIt: "TryIt",
+      run: "Run",
+      reset: "Reset",
+      value: "Evaluate",
+      fullScreen: "FullScreen",
+      backToRead: "BackToRead"
+    }, 
+    page: 'code'
   }
+   options.buttons = {
+    ...options.buttons,
+    ...moduleOptions.buttons,
+    ...this.options.tryIt.buttons
+  }
+  options.page =  this.options.tryIt.page || moduleOptions.page || options.page  
+
+  console.log('tryIt options=', options)
   const namespace = 'tryIt'
 
   // add all of the initial plugins
@@ -60,6 +76,7 @@ export default function (moduleOptions) {
     })
     console.log(resolve(path, file), join('../static', file))
   }
+
   // make sure 'assets/images/' exists to support <img> 
   try {
     if (!existsSync('assets/images')) {
@@ -69,6 +86,17 @@ export default function (moduleOptions) {
   } catch(err) {
     console.error('try to create dir "assets/images"')
   }
+
+  // move css to assets/css
+  path = resolve(__dirname, 'assets/css')
+  for (const file of readdirSync(path)) {
+    this.addTemplate({
+      src: resolve(path, file),
+      fileName: join('../assets/css', file) // resolve(path, '../static', file)
+    })
+    console.log(resolve(path, file), join('../assets/css', file))
+  }
+
 
 }
 module.exports.meta = require('./package.json')

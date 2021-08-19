@@ -1,27 +1,23 @@
 <template>
-  <div class="relative flex flex-row">
-    <div class="w-1/2 p-4">
+  <div class="try-it-page ">
+    <div class="codemirror-wrapper">
       <client-only placeholder="...wait">
         <codemirror v-model="cText" class="codemirror" :options="cmOption" />
       </client-only>
     </div>
-    <div class="flex p-4 w-1/2 pl-0">
-      <div class="flex-initial w-auto -mt-1">
+    <div class="btns-and-iframe">
+      <div class="buttons">
         <button class="butn" @click="runCode">
-          {{ options.page.buttons[0] }}
+          {{ options.buttons.run }}
         </button>
-        <button v-if="lang == 'javascript'" class="butn" @click="evalCode">
-          {{ options.page.buttons[1] }}
+        <button v-if="lang === 'javascript'" class="butn" @click="evalCode">
+          {{ options.buttons.value }}
         </button>
         <button class="butn" @click="backToRead">
-          {{ options.page.buttons[2] }}
+          {{ options.buttons.backToRead }}
         </button>
       </div>
-      <div
-        id="iframe-wrapper"
-        ref="targetCode"
-        class="flex-initial border border-solid border-gray-400"
-      >
+      <div id="iframe-wrapper" ref="targetCode">
         <iframe />
       </div>
     </div>
@@ -68,33 +64,14 @@ export default {
       this.$tryIt.iFrameText(this.$refs.targetCode, html)
     },
     backToRead () {
+      if (!this.backLink.url || !this.backLink.ref) this.$router.push('/')
+      else 
       this.$router.push(this.backLink.url + '?back=' + this.backLink.ref)
     }
   }
 }
 </script>
 <style>
-#iframe-wrapper iframe {
-  @apply: w-full;
-}
-.butn {
-  @apply block bg-gray-300 text-gray-800;
-  @apply border-0 border-solid border-gray-400;
-  @apply p-2 pl-0 m-2 ml-0 w-24 h-8;
-  @apply text-base leading-none cursor-pointer;
-}
-.butn:hover {
-  @apply bg-gray-700 text-white;
-}
-.CodeMirror-lines {
-  font-size: 14px;
-}
-#console code {
-  width: 100%;
-  height: 100px;
-  white-space: pre;
-  vertical-align: middle;
-  word-break: break-word;
-  overflow-y: auto;
-}
+@import "~/assets/css/try-it.css";
 </style>
+

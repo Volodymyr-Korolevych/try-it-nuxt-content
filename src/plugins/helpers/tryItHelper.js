@@ -42,11 +42,11 @@ export const iFrameReset = (elem) => {
 }
 
 export const langDetect = (elem) => {
-  const classes = [...elem.querySelector('pre code').classList]
-  const classes_string = classes.concat([...elem.querySelector('pre').classList]).join(' ')
-  if (classes_string.includes('language-html')) {
+  const classes = [...elem.querySelector('pre code').classList,
+     ...elem.querySelector('pre').classList].join(' ')
+  if (classes.includes('language-html')) {
     return 'html'
-  } else if (classes_string.includes('language-javascript') || classes_string.includes('language-js')) {
+  } else if (classes.includes('language-javascript') || classes.includes('language-js')) {
     return 'javascript'
   } else {
     return false

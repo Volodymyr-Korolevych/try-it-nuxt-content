@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import Prism from 'prismjs'
+// import Prism from 'prismjs'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 export default {
   async asyncData ({ $content, params }) {
@@ -25,7 +25,8 @@ export default {
     }
   },
   mounted () {
-    Prism.highlightAll()
+    console.log("mount index.vue")
+   //  if(0 === 1) Prism.highlightAll()
   }
 }
 </script>

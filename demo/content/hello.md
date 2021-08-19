@@ -5,19 +5,22 @@ description: 'Introduction/demo for TryIt Component'
 
 ## TryIt Component for nuxt/content
 
-Try-It component is useful for technical writers who use code snippets to demonstrate language peculiarities. 
+Try-It component is useful for technical writers who use code snippets to demonstrate JavaScript or HTML language peculiarities. 
  <try-it-img src="nuxt-content.png" alt="ok"></try-it-img> 
-TriIt component adds capability to evaluate/run JavaScript code (or HTML snippet), which author of the content will place on the page to demonstrate text with code examples.
-The component is used on markdown content and doesn't break usual style of markdown.
+Tri-It component adds capability to evaluate/run JavaScript (or HTML) snippet just on place, or in full screen mode.
+The component is used inside markdown content and doesn't break usual style of markdown text and formatting.
 
-Component development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.
+There are two modes of Try-It block:
+- "button mode" - button "TryIt" appears under the snippet and sends reader to the full screen mode;
+- "block mode" - snippet is transformed into the editable one and three buttons and evaluation screen appear under the snippet.
+
+Full screen mode resembles block mode with one new button "Back To Continue Reading".
 
 TryIt component doesn't require special preparation for JavaScript or HTML code snippets. For making it work it should be used usual codeblocks (see [link](https://content.nuxtjs.org/writing#codeblocks)). 
 
 For example:
 ```javascript[JavaScript]
 'use strict'
-
 function sayHi() {
   alert('Hello!')
 }
@@ -88,111 +91,6 @@ sdf
 
 sdf
 
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
-
-sdf
 
 
 
@@ -225,6 +123,6 @@ ert
 <try-it-block id="ex2"></try-it-block>
 
 
-## Displaying content
+## Inspiration
 
-Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+Component development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.

@@ -1,6 +1,6 @@
 <template>
   <button v-if="lang" :id="myId" :ref="myId" class="butn" @click="click">
-    {{ options.button.buttons[0] }}
+    {{ options.buttons.tryIt }}
   </button>
   <p v-else>
     Wrong Language
@@ -23,6 +23,7 @@ export default {
     }
   },
   mounted () {
+    console.log("mount try-it-button, id=" + this.id)
     if (this.$route.fullPath.includes('back=')) {
       const m = this.$route.fullPath.split('back=')
       const elem = m[m.length - 1]
@@ -51,19 +52,12 @@ export default {
             ref: this.myId
           }
         })
-        .then(_ => this.$router.push('/' + this.options.page.name))
+        .then(_ => this.$router.push('/' + this.options.page))
     }
   }
 }
 </script>
 <style>
-.butn {
-  @apply block bg-gray-300 text-gray-800;
-  @apply border-0 border-solid border-gray-400;
-  @apply p-2 m-2 ml-0 w-40 h-8 -mt-6;
-  @apply text-base leading-none cursor-pointer;
-}
-.butn:hover {
-  @apply bg-gray-700 text-white;
-}
+@import "~/assets/css/try-it.css";
 </style>
+

@@ -13,11 +13,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.15.0",
     "@nuxt/content": "^1.14.0",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "prism-themes": "1.5.0",
-    "tryIt": "Volodymyr-Korolevych/try-it-nuxt-content#master"
+    "vue-codemirror": "^4.0.6"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2"

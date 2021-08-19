@@ -25,19 +25,14 @@ export default {
   ],
   modules: [
     '@nuxt/content',
-    'tryIt'
+    ['../../src', {buttons: { reset: "reset"}}]
   ],
   tryIt: {
-    button: {
-      buttons: ['Виконати']
+    buttons: {
+      tryIt: "TTT",
+      fullScreen: "FS"
     },
-    block: {
-      buttons: ['Виконати', 'Відновити', 'ПовнийЕкран']
-    },
-    page: {
-      buttons: ['Виконати', 'Значення', 'Повернутися'],
-      name: 'code'
-    }
+    page: 'code'
   },
   content: {
     markdown: {
@@ -47,6 +42,13 @@ export default {
     }
   },
   build: {
+    babel:{
+      plugins: [
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        ["@babel/plugin-proposal-private-methods", { "loose": true }],
+        ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+      ]
+    }  
   },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
