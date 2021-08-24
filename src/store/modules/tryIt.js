@@ -19,11 +19,11 @@ export default options => ({
     }
   },
   actions: {
-    setCodeText (context, data) {
-      context.commit('SET_CODE', data)
+    setCodeText ({ commit }, data) {
+      commit('SET_CODE', data)
     },
-    clearData (context) {
-      context.commit('CLEAR_DATA')
+    clearData ({ commit }) {
+      commit('CLEAR_DATA')
     }
   }
 })

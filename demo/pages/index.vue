@@ -1,152 +1,52 @@
 <template>
-  <div>
-    <div class="flex-1 p-8 pl-16 overflow-y-auto">
-      <h1 class="font-bold text-4xl ml-6">
-        {{ article.title }}
-      </h1>
-      <p class="text-sm italic ml-6">
-        {{ article.description }}
-      </p>
-      <br>
-
-      <!-- content from markdown -->
-      <nuxt-content class="line-numbers" :document="article" />
-    </div>
+  <div class="m-8">
+    <h1 class="font-bold text-4xl">Blog Posts</h1>
+    <ul class="flex flex-wrap">
+      <li
+        v-for="article of articles"
+        :key="article.slug"
+        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+      >
+        <NuxtLink
+          :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+          class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
+        >
+          <div
+            class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
+          >
+            <h2 class="font-bold">{{ article.title }}</h2>
+            <p class="font-bold text-gray-600 text-sm">
+              {{ article.description }}
+            </p>
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
   </div>
 </template>
+
 <script>
-// import Prism from 'prismjs'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 export default {
-  async asyncData ({ $content, params }) {
-    const article = await $content('hello').fetch()
+  async asyncData({ $content, params }) {
+    const articles = await $content('articles')
+      .only(['title', 'description', 'slug'])
+      .fetch()
     return {
-      article
+      articles
     }
-  },
-  mounted () {
-    console.log("mount index.vue")
-   //  if(0 === 1) Prism.highlightAll()
   }
 }
 </script>
-<style>
-.nuxt-content p {
-  margin-bottom: 20px;
-}
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 28px;
-}
-.nuxt-content h3 {
-  font-weight: bold;
-  font-size: 22px;
-}
-.nuxt-content p,
-.nuxt-content pre,
-.nuxt-content ul {
-  margin: 1.2em 0;
-}
-.nuxt-content pre {
-  background-color: #0000ff0d;
-}
-.nuxt-content pre code {
-  font-weight: 500;
-}
-.nuxt-content p {
-  text-align: justify;
-  text-indent: 25px;
-}
-.nuxt-content ul {
-  list-style-type: disc;
-  margin: 0 45px;
-}
-.nuxt-content ul ul {
-  list-style-type: circle;
-  margin: 0 20px;
-}
-.nuxt-content blockquote {
-  border-left: 2px solid grey;
-  background: #f9f9f8;
-  padding: 1px;
-}
-.nuxt-content table {
-  margin-left: 20px;
-}
-.nuxt-content table th,
-.nuxt-content table td {
-  padding: 0 10px;
-  border-bottom: 1px dashed grey;
-}
-.filename {
-  font-size: 12px;
-  width: 99%;
-  text-align: right;
-  display: block;
-}
-pre.line-numbers {
-  margin-top: 0;
-}
 
-.icon.icon-link {
-  background: white;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
+<style class="postcss">
+.article-card {
+  border-radius: 8px;
 }
-.my-drawer {
-  position: absolute;
-  top: 12px;
-  left: 100%;
-  margin-left: 16px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  padding-left: 4px;
-  border: none;
+.article-card a {
+  background-color: #fff;
+  border-radius: 8px;
 }
-.my-drawer:hover {
-  background-color: #f2eeee;
-}
-pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 3.8em;
-  counter-reset: linenumber;
-}
-
-pre[class*='language-'].line-numbers > code {
-  position: relative;
-  white-space: inherit;
-}
-
-.line-numbers .line-numbers-rows {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  font-size: 100%;
-  left: -3.8em;
-  width: 3em; /* works for line-numbers below 1000 lines */
-  letter-spacing: -1px;
-  border-right: 1px solid #999;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.line-numbers-rows > span {
-  display: block;
-  counter-increment: linenumber;
-}
-
-.line-numbers-rows > span:before {
-  content: counter(linenumber);
-  color: #999;
-  display: block;
-  padding-right: 0.8em;
-  text-align: right;
+.article-card img div {
+  border-radius: 8px 0 0 8px;
 }
 </style>

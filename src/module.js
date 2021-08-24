@@ -1,6 +1,6 @@
 // module.js
 const { resolve, join } = require('path')
-const { readdirSync, existsSync, openSync, mkdirSync } = require('fs')
+const { readdirSync, existsSync, openSync, mkdirSync, copyFileSync } = require('fs')
 
 export default function (moduleOptions) {
   // get all options for the module
@@ -70,11 +70,12 @@ export default function (moduleOptions) {
   // move static files to root
   let path = resolve(__dirname, 'static')
   for (const file of readdirSync(path)) {
-    this.addTemplate({
-      src: resolve(path, file),
-      fileName: join('../static', file) // resolve(path, '../static', file)
-    })
-    console.log(resolve(path, file), join('../static', file))
+    //this.addTemplate({
+    //  src: resolve(path, file),
+    //  fileName: join('static', file) // resolve(path, '../static', file)
+    //})
+    copyFileSync(resolve(path, file), join('static', file))
+    console.log(resolve(path, file), join('static', file))
   }
 
   // make sure 'assets/images/' exists to support <img> 
@@ -90,13 +91,12 @@ export default function (moduleOptions) {
   // move css to assets/css
   path = resolve(__dirname, 'assets/css')
   for (const file of readdirSync(path)) {
-    this.addTemplate({
-      src: resolve(path, file),
-      fileName: join('../assets/css', file) // resolve(path, '../static', file)
-    })
-    console.log(resolve(path, file), join('../assets/css', file))
+    // this.addTemplate({
+    //   src: resolve(path, file),
+    //   fileName: join('../assets/css', file) // resolve(path, '../static', file)
+    // })
+    copyFileSync(resolve(path, file), join('assets/css', file))
+    console.log(resolve(path, file), join('assets/css', file))
   }
-
-
 }
 module.exports.meta = require('./package.json')
