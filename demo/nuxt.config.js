@@ -1,14 +1,7 @@
 export default {
   target: 'static',
-  ssr: true,
-  generate: {
-    cache: false
-  },
   head: {
     title: 'tryIt Demo',
-    htmlAttrs: {
-      lang: 'en'
-    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -25,12 +18,12 @@ export default {
   ],
   modules: [
     '@nuxt/content',
-    ['../../src', {buttons: { reset: "reset"}}]
+    ['../../src', {buttons: { reset: "Reset"}}]
   ],
   tryIt: {
     buttons: {
-      tryIt: "TTT",
-      fullScreen: "FS"
+      tryIt: 'TryIt',
+      fullScreen: 'Full'
     },
     page: 'code'
   },
