@@ -120,7 +120,7 @@ ert
   return accumulator + currentValue;
 });
 ```
-<try-it-block id="ex2"></try-it-block>
+<try-it-block id="ex2" theme="base16-dark"></try-it-block>
 
 
 ## Inspiration

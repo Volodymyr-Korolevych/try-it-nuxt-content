@@ -30,6 +30,10 @@ export default {
     id: {
       type: String,
       required: true
+    },
+    theme: {
+      type: String,
+      required: false      
     }
   },
   data () {
@@ -52,6 +56,7 @@ export default {
   },
   async mounted () {
     console.log("mount try-it-block, id=" + this.id)
+    this.cmOption.theme = this.theme || this._options.theme
     await this.$tryIt.findEl(this.$refs).then(() => {
       this.baseElem = this.$refs[this.myId].previousElementSibling
       let x = this.baseElem

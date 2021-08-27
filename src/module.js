@@ -1,29 +1,13 @@
 // module.js
 const { resolve, join } = require('path')
 const { readdirSync, existsSync, openSync, mkdirSync, copyFileSync } = require('fs')
+import { tryOptions } from './plugins/helpers/tryItOptions'
 
 export default function (moduleOptions) {
-  // get all options for the module
-   
-  let options = {
-    buttons: {
-      tryIt: "TryIt",
-      run: "Run",
-      reset: "Reset",
-      value: "Evaluate",
-      fullScreen: "FullScreen",
-      backToRead: "BackToRead"
-    }, 
-    page: 'code'
-  }
-   options.buttons = {
-    ...options.buttons,
-    ...moduleOptions.buttons,
-    ...this.options.tryIt.buttons
-  }
-  options.page =  this.options.tryIt.page || moduleOptions.page || options.page  
 
-  console.log('tryIt options=', options)
+  // get all options for the module
+  let options = tryOptions(moduleOptions, this.options.tryIt)
+
   const namespace = 'tryIt'
 
   // add all of the initial plugins

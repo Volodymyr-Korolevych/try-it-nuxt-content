@@ -20,13 +20,14 @@ export default {
     '@nuxt/content',
     ['../../src', {buttons: { reset: "Reset"}}]
   ],
-  tryIt: {
+   tryIt: {
     buttons: {
       tryIt: 'TryIt',
       fullScreen: 'Full'
     },
-    page: 'code'
-  },
+    page: 'code',
+    theme: 'dracula'
+  }, 
   content: {
     markdown: {
       prism: {
@@ -34,6 +35,9 @@ export default {
       }
     }
   },
+  css: ['codemirror/theme/base16-dark.css',
+        'codemirror/theme/dracula.css'
+       ],
   build: {
     babel:{
       plugins: [

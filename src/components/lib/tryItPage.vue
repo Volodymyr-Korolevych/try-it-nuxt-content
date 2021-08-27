@@ -53,6 +53,7 @@ export default {
   mounted () {
     this.cText = this.codeText
     this.cmOption.mode = 'text/' + this.lang
+    this.cmOption.theme = this._options.theme
   },
   methods: {
     runCode () {
