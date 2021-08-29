@@ -12,7 +12,7 @@
         <h1 class="font-bold text-4xl">{{ article.title }}</h1>
         <p>{{ article.description }}</p>
         <!-- content from markdown -->
-        <nuxt-content :document="article" />
+        <nuxt-content class='line-numbers' :document="article" />
       </div>
     </article>
   </div>
@@ -33,7 +33,7 @@ export default {
   },
   mounted() {
     Prism.highlightAll()
-  }
+    }
 }
 </script>
 <style>
@@ -83,5 +83,20 @@ pre[class*='language-'].line-numbers > code {
 .nuxt-content h3 {
   font-weight: bold;
   font-size: 22px;
+}
+.nuxt-content h4 {
+  font-weight: bold;
+  font-size: 18px;
+}
+.nuxt-content ul {
+  list-style: circle;
+}
+.nuxt-content ul ul {
+	margin-left: 30px;
+}
+.nuxt-content tr td, .nuxt-content tr th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 </style>

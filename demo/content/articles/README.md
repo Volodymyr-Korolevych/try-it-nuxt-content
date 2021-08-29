@@ -1,4 +1,8 @@
-# nuxt-content-try-it-module 
+---
+title: nuxt-content-try-it-module 
+description: Learning how to use @nuxt/content to create a blog again
+---
+
 
 ### Introduction
 Try-It module is created specifically for nuxt/content environment.

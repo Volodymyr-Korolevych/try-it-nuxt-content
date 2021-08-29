@@ -1,19 +1,22 @@
 ---
 title: Steps To Build  My Demo
-description: Learning how to use @nuxt/content to create a blog again
+description: Learn how  I built my demo starting with demo-blog-nuxt-content
 ---
 
 
-## Links
+### Links
 
 https://content.nuxtjs.org/writing/#codeblocks
+
 https://nuxtjs.org/blog/creating-blog-with-nuxt-content
+
 https://github.com/nuxtlabs/demo-blog-nuxt-content
 
 
-## Step 1. Fix build errors
 
-### Prettier errors
+### Step 1. Download **demo-blog-nuxt-content** and fix build errors
+
+#### Prettier errors
 
 ```js[.eslintrc.js]
     'prettier/prettier': [
@@ -35,7 +38,7 @@ https://github.com/nuxtlabs/demo-blog-nuxt-content
 }
 ```
 
-### Fix tailwind warning
+#### Fix tailwind warning
 
 ```js[tailwind.config.js]
   future: {
@@ -43,7 +46,7 @@ https://github.com/nuxtlabs/demo-blog-nuxt-content
   },
 ```
 
-### Fix  caniuse-lite warning
+#### Fix  caniuse-lite warning
 
 ```json[package.json]
   "caniuse-lite": "^1.0.30001251",

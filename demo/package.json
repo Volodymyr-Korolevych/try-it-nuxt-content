@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "dev": "nuxt --port 4040",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.0",

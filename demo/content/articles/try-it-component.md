@@ -1,24 +1,33 @@
 ---
-title: Try-It-Component
+title: Try-It-Components Demo
 description: 'Introduction/demo for TryIt Component'
 ---
 
 ## TryIt Component for nuxt/content
 
+
+
+### Introduction
+
 Try-It component is useful for technical writers who use code snippets to demonstrate JavaScript or HTML language peculiarities. 
  <try-it-img src="nuxt-content.png" alt="ok"></try-it-img> 
 Tri-It component adds capability to evaluate/run JavaScript (or HTML) snippet just on place, or in full screen mode.
-The component is used inside markdown content and doesn't break usual style of markdown text and formatting.
+The component is used inside markdown content and does not break usual style of markdown text and formatting.
 
-There are two modes of Try-It block:
-- "button mode" - button "TryIt" appears under the snippet and sends reader to the full screen mode;
-- "block mode" - snippet is transformed into the editable one and three buttons and evaluation screen appear under the snippet.
+### Modes
 
-Full screen mode resembles block mode with one new button "Back To Continue Reading".
+There are three modes of try-it-component:
+
+* Markdown document modes: There are two modes of the component inside markdown document:
+    * **Button mode** - button "TryIt" appears under the snippet and sends reader to the full screen mode;
+    * **Block mode** - snippet is transformed into an editable one and three buttons and evaluation screen appear under the snippet.
+* **Full screen** mode - is the same as a block mode, but occupies full screen and allows user to edit/run/evaluate and then go back with use of additional button "Back To Continue Reading".
+
+### Usage
 
 TryIt component doesn't require special preparation for JavaScript or HTML code snippets. For making it work it should be used usual codeblocks (see [link](https://content.nuxtjs.org/writing#codeblocks)). 
-
-For example:
+#### Block
+Example:
 ```javascript[JavaScript]
 'use strict'
 function sayHi() {
@@ -26,11 +35,11 @@ function sayHi() {
 }
 window.sayHi()
 ```
-and just ater code-block it should be placed try-it component:
+and just ater code-block it should be placed try-it-block component:
 
 - \<try-it-block id="1">\</try-it-block>
 
-That's all. With TryIt Block it will look like following:
+That is all. It will look now like following:
 
 ```javascript[JavaScript]
 'use strict'
@@ -42,29 +51,35 @@ window.sayHi()
 ```
 <try-it-block id="ex0"></try-it-block>
 
+#### Button
+Put
+-  \<try-it-button id="2">\</try-it-button>
+under code-block.
 
-## Nuxt JS custom module TryIt
+Button "Try It" will be added under the codeblock and will direct to full screen evaluation window
 
+#### Full screen
+Full screen mode is reached only from previous modes: "block" or "button" mode.
+Full screen mode allows user to edit/run/evaluate code block and then to return to the corresponding place  
 
-
-sdf
-
+#### Example Button mode and Full Screen mode 
 ```html[example]
 <html>
  <head>
-  <title> Сторінка з прикладом коду JavaScript </title>
+  <title> Page with JavaScript code example</title>
   <script>
-alert ( "Hello World!");   
+            alert ( "Hello World!");   
   </script>
  </head>
  <body>
-Це текст основної сторінки  
+        It is the main page body text  
  </body>
 </html>
 ```
 <try-it-button id="exh0"></try-it-button>
 
-sdf
+#### Example with vue.js starting page
+ 
 ```html[example]
   <html>
     <head>
@@ -78,7 +93,7 @@ sdf
             var app1 = new Vue({
             el: '#app',
             data: {
-                message: 'Привіт всім!'
+                message: 'Hello everybody!'
             }
             })
         </script>
@@ -87,14 +102,8 @@ sdf
 ```
 <try-it-block id="exh1"></try-it-block>
 
-sdf
 
-sdf
-
-
-
-
-## Writing content
+## Setup
 
 Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
 
@@ -109,11 +118,6 @@ Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetc
 ```
 <try-it-button id="ex1"></try-it-button>
 
-ert
-ert
-
-ert
-ert
 
 ```javascript[JavaScript]
 [4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
