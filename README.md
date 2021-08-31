@@ -39,7 +39,7 @@ Try-it component is placed just ater codeblock:
 
 **\<try-it-block> component** converts codeblock into editable codeMirror snippet and adds output window, which is dedicated to show HTML-output for html-snippets and CONSOLE-output for JavaScript snippets after click on "Run" button:
 
-<img align="center" max-width="800" title="PostHTML" src="demo/assets/images/TryItBlock.png">
+<img align="center" max-width="800" title="TryItBlock" src="demo/assets/images/TryItBlock.png">
 
 --------------------------------------------------------- ----  
 
@@ -57,7 +57,7 @@ Try-it component is placed just ater codeblock:
 ```
 Here is the result:
 
-<img align="right" width="220" height="200" title="PostHTML" src="demo/assets/images/TryItButton.png">
+<img align="center" max-width="800" title="TryItButton" src="demo/assets/images/TryItButton.png">
 
 --------------------------------------------------------- ----  
 
