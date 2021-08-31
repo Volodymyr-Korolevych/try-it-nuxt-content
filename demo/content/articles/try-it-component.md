@@ -104,4 +104,50 @@ Full screen mode allows user to edit/run/evaluate code block and then to return 
 ```
 <try-it-block id="ex2" theme="base16-dark"></try-it-block>
 
+Example "Concurrency model" from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 
+```javascript[JavaScript]
+(function() {
+
+  console.log('this is the start');
+
+  setTimeout(function cb() {
+    console.log('Callback 1: this is a msg from call back');
+  }); // has a default time value of 0
+
+  console.log('this is just a message');
+
+  setTimeout(function cb1() {
+    console.log('Callback 2: this is a msg from call back');
+  }, 0);
+
+  console.log('this is the end');
+
+})();
+```
+<try-it-block id="ex3"></try-it-block>
+
+Example "Linear Gradient" from [w3schools](https://www.w3schools.com/css/css3_gradients.asp)
+```html[html]
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(red, yellow);
+}
+</style>
+</head>
+<body>
+
+<h1>Linear Gradient - Top to Bottom</h1>
+<p>This linear gradient starts red at the top, transitioning to yellow at the bottom:</p>
+
+<div id="grad1"></div>
+
+</body>
+</html>
+```
+<try-it-block id="ex4"></try-it-block>

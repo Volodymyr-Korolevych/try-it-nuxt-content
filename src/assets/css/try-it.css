@@ -1,9 +1,60 @@
 /* */ 
-/*           try-it-block section */ 
+/*           common section */ 
 /* */ 
-.try-it-block {
-    @apply p-2 w-full;
+.butn {
+	display: block;
+	background-color: #e2e8f0;
+	color: #2d3748;
+	border-width: 0;
+	border-style: solid;
+	border-color: #cbd5e0;
+	padding: 0.5rem;
+	padding-left: 0;
+	margin: 0.5rem;
+	margin-left: 0;
+	width: 6rem;
+	height: 2rem;
+	font-size: 1rem;
+	line-height: 1;
+	cursor: pointer;
 }
+.butn:hover {
+	background-color: #4a5568;
+	color: #fff;
+}
+#iframe-wrapper {
+  display: flex;
+  flex: 10 150px;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  margin: 0;
+  padding: 0 5px;
+  border: 1px solid #eaf2f4;
+  box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.1);
+  height: 120px;
+}
+#iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+  max-height:500px;
+}
+.CodeMirror-scroll {
+  height: auto;
+  max-height:500px;
+}
+/* */ 
+/*           try-it-block section */ 
+/* */
+.try-it-block {
+	padding: 0.5rem;
+	width: 100%;
+} 
 .try-it-block .codemirror-wrapper {
     font-size: 15px;
 }
@@ -15,91 +66,32 @@
     align-self: flex-start;
     width: auto;
 }
-.CodeMirror {
-    border: 1px solid #eee;
-    height: auto;
-    max-height:500px;
-  }
-.CodeMirror-scroll {
-    height: auto;
-    max-height:500px;
-}
-  .butn {
-    @apply block bg-gray-300 text-gray-800;
-    @apply border-0 border-solid border-gray-400;
-    @apply p-2 m-2 ml-0 w-24 h-8;
-    @apply text-base leading-none cursor-pointer;
-  }
-  .butn:hover {
-    @apply bg-gray-700 text-white;
-  }
-  #iframe-wrapper {
-    display: flex;
-    flex: 10 150px;
-    align-items: center;
-    position: relative;
-    display: inline-block;
-    background-color: #fff;
-    margin: 0;
-    padding: 0 5px;
-    border: 1px solid #eaf2f4;
-    box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.1);
-    height: 120px;
-  }
-  #iframe-wrapper iframe {
-    width: 100%;
-  }
-/* */
-/*       try-it-button section */
-/* */ 
-.try-it-button .butn {
-  @apply block bg-gray-300 text-gray-800;
-  @apply border-0 border-solid border-gray-400;
-  @apply p-2 m-2 ml-0 w-40 h-8 -mt-6;
-  @apply text-base leading-none cursor-pointer;
-}
-.try-it-button .butn:hover {
-  @apply bg-gray-700 text-white;
-}
 /* */
 /*      try-it-page section */
 /* */
-.try-it-page { 
-  @apply relative flex flex-row
+.try-it-page {
+	position: relative;
+	display: flex;
+	flex-direction: row;
 }
 .try-it-page .codemirror-wrapper {
-    @apply w-1/2 p-4;
+	width: 50%;
+	padding: 1rem;
 }
 .try-it-page .btns-and-iframe {
-    @apply flex p-4 w-1/2 pl-0;
+	display: flex;
+	padding: 1rem;
+	width: 50%;
+	padding-left: 0;
 }
 .try-it-page .buttons {
-    @apply flex-initial w-auto -mt-1;
-}
-
-.try-it-page .butn {
-  @apply block bg-gray-300 text-gray-800;
-  @apply border-0 border-solid border-gray-400;
-  @apply p-2 pl-0 m-2 ml-0 w-24 h-8;
-  @apply text-base leading-none cursor-pointer;
-}
-.try-it-page .butn:hover {
-  @apply bg-gray-700 text-white;
+	flex: 0 1 auto;
+	width: auto;
+	margin-top: -0.25rem;
 }
 .try-it-page .CodeMirror-lines {
   font-size: 14px;
 }
 .try-it-page #iframe-wrapper {
-    @apply: flex-initial border-0 border-solid border-gray-400;
-  }
-.try-it-page #iframe-wrapper iframe {
-    @apply: w-full;
-  }
-.try-it-page #console code {
-  width: 100%;
-  height: 100px;
-  white-space: pre;
-  vertical-align: middle;
-  word-break: break-word;
-  overflow-y: auto;
+    height: 500px;
 }

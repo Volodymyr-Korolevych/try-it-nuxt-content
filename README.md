@@ -4,11 +4,11 @@
 Try-It module is created specifically for nuxt/content environment.
 It contains couple of vue components which do convertion of code-blocks into editable and executable ones (with usage of CodeMirror Editor).
 
-Try-It components are useful for technical writers who use code snippets to demonstrate JavaScript or HTML language specific examples or behaviours. 
+Try-It components are useful for technical authors who use code snippets to demonstrate JavaScript or HTML language specific examples or behaviours. 
 
-Tri-It components add capability to evaluate/run JavaScript (or HTML) snippet just on place, or in full screen mode.
+Tri-It components add capability to evaluate/run JavaScript (or HTML) snippet just in place, or in full screen mode.
 
-The components are used inside markdown content and do not break usual style of markdown text and formatting.
+The components are used inside markdown content and do not violate style of markdown text and formatting. They look as usual vue components inside markdown.
 
 ### Dependencies
 
@@ -17,9 +17,7 @@ The components are used inside markdown content and do not break usual style of 
 
 ### Usage
 
-Try-it component is placed just ater codeblock:
-
-\<try-it-block> and \<try-it-button> components are placed just ater codeblock:
+**\<try-it-block>** and **\<try-it-button>** components are placed just ater codeblock:
 
 ```md[markdown document]
     ```javascript[JavaScript]
@@ -64,15 +62,16 @@ Here is the result:
 **\<try-it-page> component** occupies a full page, it should be created by user in **/pages** directory:
 
 ```html[code.vue]
+// code.vue
 <template>
   <try-it-page />
 </template>
 ```
-It behaves fully as \<try-it-block>, but on the sepatate page. To allow user to go back there adiitional button "Go Back To Continue Reading" is introduced, it redirects user to the same place where user pressed the button "Full screen" or "Try It".  
+It behaves fully as \<try-it-block>, but on a separate page. To allow user to go back there adiitional button "Go Back To Continue Reading" is introduced, it redirects user to the same place where user pressed the button "Full screen" or "Try It".  
 
 --------------------------------------------------------- ----  
 
-**\<try-it-img>** component is additional, complementary and serves to show images, placed to ***/assets/images*** folder 
+**\<try-it-img>** component is additional, complementary and serves to show images, placed to ***/assets/images*** folder. 
 
 
 
@@ -147,7 +146,7 @@ Store is used by Try-It-Components settings, it should be kept.
 
 Additinal page **code.vue** (default name) should be added to this folder manually. This page is necessary for ***\<try-it-page>*** implementation.
 
-Text of this file is done in ***Usage*** section hereabove.
+Text of this file is given hereabove in ***Usage*** section.
 
 ## Configuration
 ### `Settings`
@@ -172,17 +171,17 @@ Options JSON:
 | Option| Button name | Description |
 |:----:|:------:|:-----------:|
 | buttons | tryIt | button caption for \<try-it-button> component |
-| buttons | run | button caption for RUN function in \<try-it-block> and \<try-it-page>  components |
-| buttons | reset | button caption for RESET CHANGES function in \<try-it-block> and \<try-it-page>  components |
-| buttons | value | button caption for EVALUATE function \<try-it-block> and \<try-it-page>  components |
-| buttons | fullScreen | button caption for \<try-it-block> component (same function as "tryIt" button |
-| buttons | backToRead | button caption for GO BACK function in \<try-it-page>  component |
+| buttons | run | button caption for RUN action in \<try-it-block> and \<try-it-page>  components |
+| buttons | reset | button caption for RESET CHANGES action in \<try-it-block> and \<try-it-page>  components |
+| buttons | value | button caption for EVALUATE action \<try-it-block> and \<try-it-page>  components |
+| buttons | fullScreen | button caption for \<try-it-block> component (same action as "tryIt" button |
+| buttons | backToRead | button caption for GO BACK action in \<try-it-page>  component |
 | code | &nbsp; | page name for \<try-it-page>  component |
 | theme | &nbsp; | theme name of codeMirror (corespondent CSS should be present in ***nuxt.config.js*** (section CSS) |
 
 --------------------------  
 > 1) Default values will be applied unless user changes it in ***nuxt.config.js***
-> 2) CodeMirror theme can be re-set separately in every item of \<try-it-block> component. 
+> 2) CodeMirror theme can be re-set separately in every item of \<try-it-block> component. (See Props.) 
 
 
 ### Props
@@ -205,4 +204,4 @@ Options JSON:
 
 ## Inspiration
 
-Component development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.
+Module development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.
