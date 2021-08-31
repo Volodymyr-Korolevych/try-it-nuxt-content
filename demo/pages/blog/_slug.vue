@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div style="position: fixed; top: 10px; left: 20px; font-weight: 700;z-index:5">
-      <NuxtLink to="/"> Back </NuxtLink>
+    <div >
+      <NuxtLink id="back_button" to="/"></NuxtLink>
     </div>
     <article
       class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
     >
       <div
-        class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
+        class="relative xs:px-8 py-4 lg:px-16 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
       >
         <h1 class="font-bold text-4xl">{{ article.title }}</h1>
         <p>{{ article.description }}</p>
@@ -37,6 +37,16 @@ export default {
 }
 </script>
 <style>
+#back_button {
+  position: fixed; 
+  top: 30px; 
+  left: 18px; 
+  z-index:5;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url(./assets/images/back-button.svg);
+}
 pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 3.8em;
@@ -98,5 +108,10 @@ pre[class*='language-'].line-numbers > code {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+}
+.nuxt-content blockquote {
+	background-color: #e5f7f7;
+	margin: 9px 0;
+	padding: 5px 20px 1px;
 }
 </style>

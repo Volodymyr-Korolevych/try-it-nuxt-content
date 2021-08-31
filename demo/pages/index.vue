@@ -1,11 +1,11 @@
 <template>
   <div class="m-8">
-    <h1 class="font-bold text-4xl">Blog Posts</h1>
-    <ul class="flex flex-wrap">
+    <h1 class="font-bold text-4xl">Nuxt/content Try-It-module</h1>
+    <ul>
       <li
         v-for="article of articles"
         :key="article.slug"
-        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+        class="xs:w-full md:w-1/2 px-2 article-card"
       >
         <NuxtLink
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
@@ -15,9 +15,6 @@
             class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
           >
             <h2 class="font-bold">{{ article.title }}</h2>
-            <p class="font-bold text-gray-600 text-sm">
-              {{ article.description }}
-            </p>
           </div>
         </NuxtLink>
       </li>

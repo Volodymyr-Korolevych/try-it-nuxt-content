@@ -19,35 +19,61 @@ The components are used inside markdown content and do not break usual style of 
 
 Try-it component is placed just ater codeblock:
 
+\<try-it-block> and \<try-it-button> components are placed just ater codeblock:
 
-```javascript[JavaScript]
-'use strict'
-function sayHi() {
-  console.log('Hello!')
-}
-window.sayHi()
+```md[markdown document]
+    ```javascript[JavaScript]
+    'use strict'
+    function sayHi() {
+      console.log('Hello!')
+    }
+    window.sayHi()
+    ```
+    <try-it-block id="1"></try-it-block>
+```  
+
+--------------------------------------------------------- ----  
+
+
+
+
+**\<try-it-block> component** converts codeblock into editable codeMirror snippet and adds output window, which is dedicated to show HTML-output for html-snippets and CONSOLE-output for JavaScript snippets after click on "Run" button:
+
+<img align="right" width="220" height="200" title="PostHTML" src="demo/assets/images/TryItBlock.png">
+
+--------------------------------------------------------- ----  
+
+**\<try-it-button> component** is easier: it only adds button "Try It", which redirects user to full screen \<try-it-page> component:
+
+```md[markdown document]
+    ```javascript[JavaScript]
+    'use strict'
+    function sayHi() {
+      console.log('Hello!')
+    }
+    window.sayHi()
+    ```
+    <try-it-button id="1"></try-it-button>
 ```
-- \<try-it-block id="1">\</try-it-block>
+Here is the result:
 
-This component converts codeblock into editable codeMirror snippet and adds output window, which will show HTML-output for html-snippets and CONSOLE-output for JavaScript snippets:
+<img align="right" width="220" height="200" title="PostHTML" src="demo/assets/images/TryItButton.png">
 
-```javascript[JavaScript]
-'use strict'
-function sayHi() {
-  console.log('Hello!')
-}
-window.sayHi()
-```
-\<try-it-block id="1">\</try-it-block>
+--------------------------------------------------------- ----  
+
+**\<try-it-page> component** occupies a full page, it should be created by user in **/pages** directory:
 
 ```html[code.vue]
 <template>
   <try-it-page />
 </template>
 ```
+It behaves fully as \<try-it-block>, but on the sepatate page. To allow user to go back there adiitional button "Go Back To Continue Reading" is introduced, it redirects user to the same place where user pressed the button "Full screen" or "Try It".  
 
+--------------------------------------------------------- ----  
 
-Additional component **\<try-it-img>** is complementary and serves to show images, placed to ***/assets/images*** folder 
+**\<try-it-img>** component is additional, complementary and serves to show images, placed to ***/assets/images*** folder 
+
 
 
 ### Setup
@@ -81,7 +107,7 @@ modules: [
   }
 ],
 ```
-Add into ***nuxt.config.js*** CodeMirror themes you want to use
+Add CodeMirror themes you want to use into ***nuxt.config.js*** section CSS:
 ```js[nuxt.config.js]
   css: ['codemirror/theme/base16-dark.css',
         'codemirror/theme/dracula.css',
@@ -96,6 +122,10 @@ $ yarn add nuxt-content-try-it-module
 $ yarn generate
 $ yarn start
 ```
+Add page for \<try-it-page>
+
+> Name of this page is configurable in **options** (default is "code.vue")
+
 ## Nuxt directories
 Try-It-module uses the following special directories of the nuxt project: 
 
@@ -137,6 +167,8 @@ Options JSON:
     theme: 'default'
   }
 ```
+
+----------------------
 | Option| Button name | Description |
 |:----:|:------:|:-----------:|
 | buttons | tryIt | button caption for \<try-it-button> component |
@@ -148,8 +180,29 @@ Options JSON:
 | code | &nbsp; | page name for \<try-it-page>  component |
 | theme | &nbsp; | theme name of codeMirror (corespondent CSS should be present in ***nuxt.config.js*** (section CSS) |
 
+--------------------------  
+> 1) Default values will be applied unless user changes it in ***nuxt.config.js***
+> 2) CodeMirror theme can be re-set separately in every item of \<try-it-block> component. 
 
-Default values will be applied if user did not change it in ***nuxt.config.js***
 
-### Coution
-* It is forbidden in nuxt/content/markdown to use self-closing tags: <span style="text-decoration: line-through">\<try-it-button id="1" /></span>
+### Props
+--------------
+#### \<try-it-button>, \<try-it-block>
+* **id** (string) is required. User should check if all \<try-it-...> items have different id-s on one Markdown page.
+* **theme** (string) - not required. Is used for CodeMirror theme, which can be changed for every other \<try-it-block> on the same page. Make sure that css-file for theme is included into ***nuxt.config.js*** (CSS section). 
+
+> CodeMirror theme for \<try-it-page> is taken from **options** (see hereafter).  
+-----------------  
+
+#### \<try-it-img>
+* **src** (string) - image file name
+* **alt** (string) -  alternative text, which is shown when cursor is above the image
+----------------
+
+### Caution
+> It is forbidden in nuxt/content/markdown to use self-closing tags: <span style="text-decoration: line-through">\<try-it-button id="1" /></span>
+
+
+## Inspiration
+
+Component development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.

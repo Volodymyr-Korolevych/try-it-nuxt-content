@@ -1,33 +1,19 @@
 ---
-title: Try-It-Components Demo
-description: 'Introduction/demo for TryIt Component'
+title: Demo
+description:
 ---
-
-## TryIt Component for nuxt/content
-
-
-
-### Introduction
-
-Try-It component is useful for technical writers who use code snippets to demonstrate JavaScript or HTML language peculiarities. 
- <try-it-img src="nuxt-content.png" alt="ok"></try-it-img> 
-Tri-It component adds capability to evaluate/run JavaScript (or HTML) snippet just on place, or in full screen mode.
-The component is used inside markdown content and does not break usual style of markdown text and formatting.
 
 ### Modes
 
-There are three modes of try-it-component:
+There are three modes of \<try-it-...> components:
 
-* Markdown document modes: There are two modes of the component inside markdown document:
-    * **Button mode** - button "TryIt" appears under the snippet and sends reader to the full screen mode;
-    * **Block mode** - snippet is transformed into an editable one and three buttons and evaluation screen appear under the snippet.
-* **Full screen** mode - is the same as a block mode, but occupies full screen and allows user to edit/run/evaluate and then go back with use of additional button "Back To Continue Reading".
+* Markdown document modes: 
+    * **Button mode** \<try-it-button> - button "TryIt" appears under the snippet and sends reader to the full screen mode;
+    * **Block mode** \<try-it-block> - snippet is transformed into an editable one and three buttons and evaluation screen appear under the snippet.
+* **Full screen mode** \<try-it-page>- the same as a block mode, but occupies full screen and allows user to edit/run/evaluate and then go back with use of additional button "Back To Continue Reading".
 
-### Usage
-
-TryIt component doesn't require special preparation for JavaScript or HTML code snippets. For making it work it should be used usual codeblocks (see [link](https://content.nuxtjs.org/writing#codeblocks)). 
-#### Block
-Example:
+#### Block Examples
+Example with ALERT (no console output here):
 ```javascript[JavaScript]
 'use strict'
 function sayHi() {
@@ -103,14 +89,6 @@ Full screen mode allows user to edit/run/evaluate code block and then to return 
 <try-it-block id="exh1"></try-it-block>
 
 
-## Setup
-
-Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
-
-## Fetching content
-
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
-
 ```javascript[JavaScript]
 [4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
   return accumulator + currentValue;
@@ -127,6 +105,3 @@ Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetc
 <try-it-block id="ex2" theme="base16-dark"></try-it-block>
 
 
-## Inspiration
-
-Component development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.

@@ -1,8 +1,9 @@
 ---
-title: Steps To Build  My Demo
-description: Learn how  I built my demo starting with demo-blog-nuxt-content
+title: Steps I Built  My Demo
+description:
 ---
-
+### Introduction
+This topic is a good example how I tried to build my Demo. Problem was in  
 
 ### Links
 
