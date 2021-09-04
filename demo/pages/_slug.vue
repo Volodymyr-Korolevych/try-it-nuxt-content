@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <div >
+  <div class="flex justify-center">
+    <div>
       <NuxtLink id="back_button" to="/"></NuxtLink>
     </div>
     <article
-      class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
+      class="flex lg:h-screen w-screen xs:flex-col lg:flex-row max-w-5xl"
     >
       <div
-        class="relative xs:px-8 py-4 lg:px-16 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
+        class="relative xs:px-8 py-4 lg:px-32 xs:w-full h-full"
       >
         <h1 class="font-bold text-4xl">{{ article.title }}</h1>
         <p>{{ article.description }}</p>
@@ -89,17 +89,20 @@ pre[class*='language-'].line-numbers > code {
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 28px;
+  margin:10px 0;
 }
 .nuxt-content h3 {
   font-weight: bold;
   font-size: 22px;
+  margin:10px 0;
 }
 .nuxt-content h4 {
   font-weight: bold;
   font-size: 18px;
+  margin:10px 0;
 }
 .nuxt-content ul {
-  list-style: circle;
+  list-style: disc inside;
 }
 .nuxt-content ul ul {
 	margin-left: 30px;

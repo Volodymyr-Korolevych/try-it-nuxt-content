@@ -3,29 +3,15 @@ title: Demo
 description:
 ---
 
-### Modes
+### \<try-it-...> component types
 
-There are three modes of \<try-it-...> components:
+* First type is use of \<try-it-...> in markdown document: 
+    * **Button** \<try-it-button> component adds button "TryIt" just under the snippet and this button sends reader to the full screen mode with the same snippet of code for evaluation;
+    * **Block** \<try-it-block> - this component transforms code block into an editable one and adds buttons section and evaluation screen under the snippet. 
+* Second type is use of full screen mode **Full screen** \<try-it-page>- component fully equivalent to a  **Block**, but it occupies full screen, allows user to edit/run/evaluate code, and then go back to continue reading (button "Back To Read").
 
-* Markdown document modes: 
-    * **Button mode** \<try-it-button> - button "TryIt" appears under the snippet and sends reader to the full screen mode;
-    * **Block mode** \<try-it-block> - snippet is transformed into an editable one and three buttons and evaluation screen appear under the snippet.
-* **Full screen mode** \<try-it-page>- the same as a block mode, but occupies full screen and allows user to edit/run/evaluate and then go back with use of additional button "Back To Continue Reading".
-
-#### Block Examples
-Example with ALERT (no console output here):
-```javascript[JavaScript]
-'use strict'
-function sayHi() {
-  alert('Hello!')
-}
-window.sayHi()
-```
-and just ater code-block it should be placed try-it-block component:
-
-- \<try-it-block id="1">\</try-it-block>
-
-That is all. It will look now like following:
+#### Block Example
+Example with ALERT (no console output):
 
 ```javascript[JavaScript]
 'use strict'
@@ -37,18 +23,23 @@ window.sayHi()
 ```
 <try-it-block id="ex0"></try-it-block>
 
-#### Button
-Put
--  \<try-it-button id="2">\</try-it-button>
-under code-block.
+#### Button Example
 
-Button "Try It" will be added under the codeblock and will direct to full screen evaluation window
+```javascript[JavaScript]
+'use strict'
 
-#### Full screen
-Full screen mode is reached only from previous modes: "block" or "button" mode.
-Full screen mode allows user to edit/run/evaluate code block and then to return to the corresponding place  
+function sayHi() {
+  alert('Hello!')
+}
+window.sayHi()
+```
+<try-it-button id="ex1"></try-it-button>
 
-#### Example Button mode and Full Screen mode 
+#### Full screen mode
+Full screen can be reached only from "**block**" or "**button**" modes.
+Full screen mode allows user to edit/run/evaluate code block and then return to continue reading of the markdown document.  
+
+#### Button and Full Screen mode 
 ```html[example]
 <html>
  <head>
@@ -64,7 +55,7 @@ Full screen mode allows user to edit/run/evaluate code block and then to return 
 ```
 <try-it-button id="exh0"></try-it-button>
 
-#### Example with vue.js starting page
+#### Vue.js Example in **Block** mode
  
 ```html[example]
   <html>
@@ -88,6 +79,8 @@ Full screen mode allows user to edit/run/evaluate code block and then to return 
 ```
 <try-it-block id="exh1"></try-it-block>
 
+#### JavaScript Function Example with no **console.log** 
+Such example produces empty output of console, but "Evaluate" button helps to see the result of function call:  
 
 ```javascript[JavaScript]
 [4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
@@ -96,17 +89,10 @@ Full screen mode allows user to edit/run/evaluate code block and then to return 
 ```
 <try-it-button id="ex1"></try-it-button>
 
+#### MDN Example "Concurrency model" from [[MDN]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 
 ```javascript[JavaScript]
-[4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
-  return accumulator + currentValue;
-});
-```
-<try-it-block id="ex2" theme="base16-dark"></try-it-block>
 
-Example "Concurrency model" from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
-
-```javascript[JavaScript]
 (function() {
 
   console.log('this is the start');
@@ -127,7 +113,8 @@ Example "Concurrency model" from [MDN](https://developer.mozilla.org/en-US/docs/
 ```
 <try-it-block id="ex3"></try-it-block>
 
-Example "Linear Gradient" from [w3schools](https://www.w3schools.com/css/css3_gradients.asp)
+#### W3School Example "Linear Gradient" from [[w3schools]](https://www.w3schools.com/css/css3_gradients.asp)
+
 ```html[html]
 <!DOCTYPE html>
 <html>

@@ -13,6 +13,9 @@
         <button v-if="lang === 'javascript'" class="butn" @click="evalCode">
           {{ options.buttons.value }}
         </button>
+        <button class="butn" @click="reset">
+          {{ options.buttons.reset }}
+        </button>
         <button class="butn" @click="backToRead">
           {{ options.buttons.backToRead }}
         </button>
@@ -63,6 +66,10 @@ export default {
     evalCode () {
       const html = this.$tryIt.evalCode(this.cText)
       this.$tryIt.iFrameText(this.$refs.targetCode, html)
+    },
+    reset () {
+      this.cText = this.codeText
+      this.$tryIt.iFrameReset(this.$refs.targetCode)
     },
     backToRead () {
       if (!this.backLink.url || !this.backLink.ref) this.$router.push('/')

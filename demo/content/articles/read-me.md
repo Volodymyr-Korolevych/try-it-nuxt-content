@@ -1,7 +1,8 @@
 ---
-title: Module description 
+title: Try-It Module description 
 description: 
 ---
+<p>&nbsp;</p>
 
 ### Introduction  
 
@@ -10,9 +11,10 @@ It contains couple of vue components which do convertion of code-blocks into edi
 
 Try-It components are useful for technical authors who use code snippets to demonstrate JavaScript or HTML language specific examples or behaviours. 
 
-Tri-It components add capability to evaluate/run JavaScript (or HTML) snippet just in place, or in full screen mode.
+Try-It components add capability to evaluate/run JavaScript (or HTML) snippet just in place, or in full screen mode.
 
 The components are used inside markdown content and do not violate style of markdown text and formatting. They look as usual vue components inside markdown.
+<p style="margin:0; height:8px;">&nbsp;</p>
 
 ### Dependencies  
 
@@ -21,7 +23,9 @@ The components are used inside markdown content and do not violate style of mark
 
 ### Usage  
 
-\<try-it-block> and \<try-it-button> components are placed just ater codeblock:
+
+
+Write **\<try-it-block>** or **\<try-it-button>** component just ater codeblock, which you want to convert into editable:
 
 ```md[markdown document]
     ```javascript[JavaScript]
@@ -34,12 +38,9 @@ The components are used inside markdown content and do not violate style of mark
     <try-it-block id="1"></try-it-block>
 ```  
 
---------------------------------------------------------- ----  
+<p style="margin:0; height:8px;">&nbsp;</p>
 
-
-
-
-**\<try-it-block> component** converts codeblock into editable codeMirror snippet and adds output window, which is dedicated to show HTML-output for html-snippets and CONSOLE-output for JavaScript snippets after click on "Run" button:
+**\<try-it-block> component** converts codeblock into editable codeMirror snippet and adds output window, which role is to show HTML output for html-snippets and CONSOLE output for JavaScript snippets (as a result of click on "Run" button):
 
 ```javascript[JavaScript]
 'use strict'
@@ -50,7 +51,7 @@ window.sayHi()
 ```
 <try-it-block id="1"></try-it-block>  
 
---------------------------------------------------------- ----  
+<p style="margin:0; height:12px;"></p>
 
 **\<try-it-button> component** is easier: it only adds button "Try It", which redirects user to full screen \<try-it-page> component:
 
@@ -64,7 +65,7 @@ window.sayHi()
     ```
     <try-it-button id="1"></try-it-button>
 ```
-Here is the result:
+Result is hereafter. Press button "TryIt" and you will be redirected to full-screen-**\<try-it-page>** with copied code snippet:
 
 ```javascript[JavaScript]
 'use strict'
@@ -75,24 +76,25 @@ window.sayHi()
 ```
 <try-it-button id="1"></try-it-button>  
   
---------------------------------------------------------- ----  
+<p style="margin:0; height:12px;">&nbsp;</p> 
 
-**\<try-it-page> component** occupies a full page, it should be created by user in **/pages** directory:
+**\<try-it-page> component** occupies a full page, it should be created by user in ***/pages*** directory during setup process.
 
 ```html[code.vue]
 <template>
   <try-it-page />
 </template>
 ```
-It behaves fully as \<try-it-block>, but on a sepatate page. To allow user to go back there adiitional button "Go Back To Continue Reading" is introduced, it redirects user to the same place where user pressed the button "Full screen" or "Try It".  
+It behaves fully as \<try-it-block>, but on a separate page. User can return to back with adiitional button "Go Back To Continue Reading". It redirects user to the same codeblock on the markdown page.  
 
---------------------------------------------------------- ----  
+<p style="margin:0; height:8px;">&nbsp;</p>
 
-**\<try-it-img>** component is additional, complementary and serves to show images, placed to ***/assets/images*** folder. 
+**\<try-it-img>** component is additional, complementary, and serves to show images, placed to ***/assets/images*** folder. 
 
 
 ### Setup
   
+<p style="margin:0; height:12px;">&nbsp;</p>
   
 Insert following lines into ***nuxt.config.js*** 
 ```js[nuxt.config.js]
@@ -109,7 +111,7 @@ modules: [
     theme: 'default'
   },
 ```
-or you can use short notation:
+or you can use shorter notation:
 ```js[nuxt.config.js]
 modules: [
    '@nuxt/content',
@@ -124,14 +126,17 @@ modules: [
   }
 ],
 ```
-Add into ***nuxt.config.js*** (CSS section)  CodeMirror themes you want to use
+Add into ***nuxt.config.js*** , ***css section***,  links to css-files of CodeMirror themes you want to use:
+
 ```js[nuxt.config.js]
   css: ['codemirror/theme/base16-dark.css',
         'codemirror/theme/dracula.css',
         . . . . .
        ],
 ```
+
 Install Try-it-module 
+
 ```powershell[PowerShell]
 $ cd demo
 $ yarn add nuxt-content-try-it-module
@@ -139,11 +144,18 @@ $ yarn add nuxt-content-try-it-module
 $ yarn generate
 $ yarn start
 ```
-Add page for \<try-it-page>
+Create page for \<try-it-page>
+
+```html[code.vue]
+<template>
+  <try-it-page />
+</template>
+```
 
 > Name of this page is configurable in **options** (default is "code.vue")
 
 ## Nuxt directories
+
 Try-It-module uses the following special directories of a nuxt project: 
 
 ### `assets`
@@ -164,7 +176,7 @@ Store is used by Try-It-Components settings, it should be kept.
 
 Additinal page **code.vue** (default name) should be added to this folder manually. This page is necessary for ***\<try-it-page>*** implementation.
 
-Text of this file is given hereabove in ***Usage*** section.
+Text of this file is given hereabove in ***Setup*** section.
 
 ## Configuration
 ### `Settings`
@@ -184,6 +196,8 @@ Options JSON:
     theme: 'default'
 }
 ```
+<p style="margin:0;">&nbsp;</p>
+
 ----------------------
 | Option| Button name | Description |
 |:----|:------|:-----------|
@@ -201,7 +215,16 @@ Options JSON:
 > 1) Default values will be applied unless user changes it in ***nuxt.config.js***
 > 2) CodeMirror theme can be re-set separately in every item of \<try-it-block> component (see Props). 
 
+<p style="margin:0; height:8px;">&nbsp;</p>
+
 ### Props
+
+```html[code.vue]
+  <try-it-button id="string"></try-it-button>
+  <try-it-block id="string" theme="string"></try-it-block>
+  <try-it-page> </try-it-page>
+  <try-it-img src="string" alt="string"></try-it-img>
+```
 --------------
 #### \<try-it-button>, \<try-it-block>
 * **id** (string) is required. User should check if all \<try-it-...> items have different id-s on one Markdown page.
@@ -215,9 +238,11 @@ Options JSON:
 * **alt** (string) -  alternative text, which is shown when cursor is above the image
 ----------------
 ### Caution
-> It is forbidden  to use self-closing tags in nuxt/content/markdown: <span style="text-decoration: line-through">\<try-it-button id="1" /></span>
-
+> It is forbidden  to use self-closing tags in nuxt/content/markdown: 
+>
+><span style="text-decoration: line-through">\<try-it-button id="1" /></span>
+Shoul be \<try-it-button id="1">\</try-it-button>
 
 ## Inspiration
 
-Module development was inspired by MDN live examples and uses console support taken from [MDN BoB](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.
+Module development was inspired by MDN live examples, and uses console support taken from [[MDN BoB]](https://github.com/mdn/bob/tree/master/editor/js/editor-libs) and CodeMirror library.
