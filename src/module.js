@@ -24,7 +24,7 @@ export default function (moduleOptions) {
       fileName: join(namespace, pathString),
       options
     })
-    console.log(__dirname, resolve(__dirname, pathString), join(namespace, pathString))
+    // console.log(__dirname, resolve(__dirname, pathString), join(namespace, pathString))
   }
   // make sure 'store/index.js' exists
   const path_store = 'store/index.js'
@@ -54,12 +54,8 @@ export default function (moduleOptions) {
   // move static files to root
   let path = resolve(__dirname, 'static')
   for (const file of readdirSync(path)) {
-    //this.addTemplate({
-    //  src: resolve(path, file),
-    //  fileName: join('static', file) // resolve(path, '../static', file)
-    //})
     copyFileSync(resolve(path, file), join('static', file))
-    console.log(resolve(path, file), join('static', file))
+    // console.log(resolve(path, file), join('static', file))
   }
 
   // make sure 'assets/images/' exists to support <img> 
@@ -75,12 +71,8 @@ export default function (moduleOptions) {
   // move css to assets/css
   path = resolve(__dirname, 'assets/css')
   for (const file of readdirSync(path)) {
-    // this.addTemplate({
-    //   src: resolve(path, file),
-    //   fileName: join('../assets/css', file) // resolve(path, '../static', file)
-    // })
     copyFileSync(resolve(path, file), join('assets/css', file))
-    console.log(resolve(path, file), join('assets/css', file))
+    // console.log(resolve(path, file), join('assets/css', file))
   }
 }
 module.exports.meta = require('./package.json')

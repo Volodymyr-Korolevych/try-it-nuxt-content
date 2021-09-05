@@ -7,7 +7,7 @@ export const tryOptions =  (moduleOptions, tryItOptions) => {
 const tOptions = tryItOptions || {}
 const tOptButtons = (tOptions.buttons) ? tOptions.buttons : {}
 const mOptButtons = (moduleOptions.buttons) ? moduleOptions.buttons : {}
-console.log("setOptions", moduleOptions, tOptions)
+// console.log("setOptions", moduleOptions, tOptions)
 
   let options = {
     buttons: {

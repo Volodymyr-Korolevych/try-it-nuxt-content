@@ -40,7 +40,7 @@ Write **\<try-it-block>** or **\<try-it-button>** component just ater codeblock,
 
 <p style="margin:0; height:8px;">&nbsp;</p>
 
-**\<try-it-block> component** converts codeblock into editable codeMirror snippet and adds output window, which role is to show HTML output for html-snippets and CONSOLE output for JavaScript snippets (as a result of click on "Run" button):
+**\<try-it-block> component** converts codeblock into editable codeMirror snippet and adds output window, which role is to show HTML output for html-snippets and CONSOLE output for JavaScript snippets (as a result of click on Run button):
 
 ```javascript[JavaScript]
 'use strict'
@@ -53,7 +53,7 @@ window.sayHi()
 
 <p style="margin:0; height:12px;"></p>
 
-**\<try-it-button> component** is easier: it only adds button "Try It", which redirects user to full screen \<try-it-page> component:
+**\<try-it-button> component** is easier: it only adds button "Try It", which redirects user to full screen **\<try-it-page>** component:
 
 ```md[markdown document]
     ```javascript[JavaScript]
@@ -65,7 +65,7 @@ window.sayHi()
     ```
     <try-it-button id="1"></try-it-button>
 ```
-Result is hereafter. Press button "TryIt" and you will be redirected to full-screen-**\<try-it-page>** with copied code snippet:
+Result is hereafter. Press button TryIt and you will be redirected to full-screen - **\<try-it-page>** with copied code snippet:
 
 ```javascript[JavaScript]
 'use strict'
@@ -78,7 +78,7 @@ window.sayHi()
   
 <p style="margin:0; height:12px;">&nbsp;</p> 
 
-**\<try-it-page> component** occupies a full page, it should be created by user in ***/pages*** directory during setup process.
+**\<try-it-page> component** occupies a full page, it should be created by user in ***/pages*** directory on setup process.
 
 ```html[code.vue]
 <template>

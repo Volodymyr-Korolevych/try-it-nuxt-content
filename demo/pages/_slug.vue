@@ -86,6 +86,9 @@ pre[class*='language-'].line-numbers > code {
 .nuxt-content p {
   margin-bottom: 20px;
 }
+.nuxt-content a {
+  color: blue;
+}
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 28px;

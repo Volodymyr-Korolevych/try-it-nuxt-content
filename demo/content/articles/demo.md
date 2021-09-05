@@ -3,16 +3,19 @@ title: Demo
 description:
 ---
 
-### \<try-it-...> component types
+#### \<try-it-...> component types
 
 * First type is use of \<try-it-...> in markdown document: 
     * **Button** \<try-it-button> component adds button "TryIt" just under the snippet and this button sends reader to the full screen mode with the same snippet of code for evaluation;
     * **Block** \<try-it-block> - this component transforms code block into an editable one and adds buttons section and evaluation screen under the snippet. 
-* Second type is use of full screen mode **Full screen** \<try-it-page>- component fully equivalent to a  **Block**, but it occupies full screen, allows user to edit/run/evaluate code, and then go back to continue reading (button "Back To Read").
+* Second type is use of full screen mode **Full screen** \<try-it-page>- component fully equivalent to a  **Block**, but it occupies full screen, allows user to edit/run/evaluate code, and then go back to markdown document to continue reading (button "Back To Read").
 
 #### Block Example
 Example with ALERT (no console output):
-
+* code block is editable;
+* button Run wil execute JavaScript;
+* button Reset will restore initial code block after user does changes in code;
+* button Full will redirect to Full Screen mode,
 ```javascript[JavaScript]
 'use strict'
 
@@ -24,7 +27,7 @@ window.sayHi()
 <try-it-block id="ex0"></try-it-block>
 
 #### Button Example
-
+* button TryIt will redirect to Full Screen mode,
 ```javascript[JavaScript]
 'use strict'
 
@@ -39,7 +42,7 @@ window.sayHi()
 Full screen can be reached only from "**block**" or "**button**" modes.
 Full screen mode allows user to edit/run/evaluate code block and then return to continue reading of the markdown document.  
 
-#### Button and Full Screen mode 
+#### Button and Full Screen mode (HTML document) 
 ```html[example]
 <html>
  <head>
@@ -55,7 +58,7 @@ Full screen mode allows user to edit/run/evaluate code block and then return to 
 ```
 <try-it-button id="exh0"></try-it-button>
 
-#### Vue.js Example in **Block** mode
+#### Vue.js Example in **Block** mode (HTML document with external libraries) 
  
 ```html[example]
   <html>
@@ -80,7 +83,7 @@ Full screen mode allows user to edit/run/evaluate code block and then return to 
 <try-it-block id="exh1"></try-it-block>
 
 #### JavaScript Function Example with no **console.log** 
-Such example produces empty output of console, but "Evaluate" button helps to see the result of function call:  
+This example produces empty output into console, but in this case Evaluate button helps to see the result of function execution:  
 
 ```javascript[JavaScript]
 [4,1,2,1,4].reduce(function(accumulator, currentValue, index, array) {
@@ -89,7 +92,10 @@ Such example produces empty output of console, but "Evaluate" button helps to se
 ```
 <try-it-button id="ex1"></try-it-button>
 
-#### MDN Example "Concurrency model" from [[MDN]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+
+<p style="margin:0; height:8px;">&nbsp;</p>
+
+#### MDN Example "Concurrency model" from [[MDN]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) (JavaScript code)
 
 ```javascript[JavaScript]
 
@@ -113,7 +119,9 @@ Such example produces empty output of console, but "Evaluate" button helps to se
 ```
 <try-it-block id="ex3"></try-it-block>
 
-#### W3School Example "Linear Gradient" from [[w3schools]](https://www.w3schools.com/css/css3_gradients.asp)
+<p style="margin:0; height:8px;">&nbsp;</p>
+
+#### W3School Example "Linear Gradient" from [[w3schools]](https://www.w3schools.com/css/css3_gradients.asp) (HTML)
 
 ```html[html]
 <!DOCTYPE html>
