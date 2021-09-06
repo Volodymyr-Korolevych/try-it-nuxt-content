@@ -3,19 +3,23 @@ title: Demo
 description:
 ---
 
-#### \<try-it-...> component types
+#### \<try-it-...> component variants
 
-* First type is use of \<try-it-...> in markdown document: 
-    * **Button** \<try-it-button> component adds button "TryIt" just under the snippet and this button sends reader to the full screen mode with the same snippet of code for evaluation;
-    * **Block** \<try-it-block> - this component transforms code block into an editable one and adds buttons section and evaluation screen under the snippet. 
-* Second type is use of full screen mode **Full screen** \<try-it-page>- component fully equivalent to a  **Block**, but it occupies full screen, allows user to edit/run/evaluate code, and then go back to markdown document to continue reading (button "Back To Read").
+There are three variants of the \<try-it-...> component: "Button", "Block" and "Full screen". 
+
+* The first two are used inside markdown document: 
+    * **Button** \<try-it-button> component adds button "TryIt" below some code block and pressing this button will act as redirect to the full screen mode \<try-it-page> with the same snippet of code for evaluation;
+    * **Block** \<try-it-block> - this component transforms  code block into an editable one in place and adds buttons section and evaluation screen below the snippet. 
+* Third  **Full screen** \<try-it-page>- component is completely equivalent to a  **Block**, but it occupies the entire screen, allows user to edit/run/evaluate the code, and then return to markdown document to continue reading ("Back To Read" button).
 
 #### Block Example
 Example with ALERT (no console output):
-* code block is editable;
-* button Run wil execute JavaScript;
-* button Reset will restore initial code block after user does changes in code;
-* button Full will redirect to Full Screen mode,
+> Remarks:
+> * the code block is editable;
+> * the button Run wil execute JavaScript;
+> * the button Reset will restore the original code block after user makes changes to the code;
+> * the button Full will redirect to Full Screen mode
+
 ```javascript[JavaScript]
 'use strict'
 
@@ -27,7 +31,7 @@ window.sayHi()
 <try-it-block id="ex0"></try-it-block>
 
 #### Button Example
-* button TryIt will redirect to Full Screen mode,
+* the button TryIt will redirect to the Full Screen mode
 ```javascript[JavaScript]
 'use strict'
 

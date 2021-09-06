@@ -111,6 +111,15 @@ Add into ***nuxt.config.js*** , ***css section***,  links to css-files of CodeMi
        ],
 ```
 
+Create page for \<try-it-page>
+> Name of this page is configurable in **options** (default is "code.vue")
+
+```html[code.vue]
+<template>
+  <try-it-page />
+</template>
+```
+
 Install Try-it-module 
 
 ```powershell[PowerShell]
@@ -120,9 +129,6 @@ $ yarn add nuxt-content-try-it-module
 $ yarn generate
 $ yarn start
 ```
-Create page for \<try-it-page>
-
-> Name of this page is configurable in **options** (default is "code.vue")
 
 ## Nuxt directories
 
