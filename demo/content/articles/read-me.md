@@ -15,7 +15,7 @@ Try-It components add capability to evaluate/run JavaScript (or HTML) snippet ju
 
 You can use it selectively by applying separately to all or some code blocks on the page.
 
-The components are used inside markdown content and do not violate style of markdown text and formatting. They look as regular vue components within a markdown (for writers), and like editable and executable code snippets for readers.
+The components are used inside the markdown content and do not violate the style of markdown text and formatting. They look like regular vue components within a markdown (for writers), and like editable and executable code snippets for readers.
 <p style="margin:0; height:8px;">&nbsp;</p>
 
 ### Dependencies  
@@ -25,12 +25,12 @@ The components are used inside markdown content and do not violate style of mark
 
 ### Usage  
 
-Here we should define three categories of users:
-* Developer - person who creates/supports  web-site, based on nuxt/content technology. He is to follow Try-it-module setup instructions;
-* Author - person who populates web-site with markdown documents. He/she decides which examples to use and whether they require to be explored (executed / evaluated / modified)  by reader;
-* Reader - consumer of the technical papers.  
+Here we will define three categories of users:
+* Developer - person who creates/maintains website, based on nuxt/content technology. He is to follow Try-it-module setup instructions;
+* Author - person who populates website with markdown documents. He/she decides which examples to use and whether they require to be explored (executed / evaluated / modified)  by reader;
+* Reader - consumer of the technical documents.  
 
-After setup is finished, the author will apply **\<try-it-block>** or **\<try-it-button>** components to some particular code examples. His work here is to insert **\<try-it-block>** or **\<try-it-button>** component text just after certain codeblock in the following way:
+Once a setup is complete the author will apply **\<try-it-block>** or **\<try-it-button>** components to some particular code examples. His job here is to insert **\<try-it-block>** or **\<try-it-button>** component text just after specific codeblock as follows:
 
 ```md[markdown document]
     ```javascript[JavaScript]
@@ -46,7 +46,7 @@ After setup is finished, the author will apply **\<try-it-block>** or **\<try-it
 
 <p style="margin:0; height:8px;">&nbsp;</p>
 
-When rendering a page, the **\<try-it-block> component** will convert a code block into an editable codeMirror snippet and add an output window, whose role is to display HTML output for html snippets and CONSOLE output for JavaScript snippets (by clicking the Run button). 
+When rendering a page, the **\<try-it-block> component** will convert a code block into an editable codeMirror snippet and add an output window whose role is to display HTML output for html snippets and CONSOLE output for JavaScript snippets (by clicking the Run button). 
 
 Finally, the reader will see the following picture:
 
@@ -61,7 +61,7 @@ window.sayHi()
 
 <p style="margin:0; height:12px;"></p>
 
-The **\<try-it-button> component** acts a bit simpler: it will only add a "Try It" button below the codeblock. This button will redirect the reader to the full screen **\<try-it-page>** component. Here is what the author does:
+The **\<try-it-button> component** acts a bit simpler: it will only add a "Try It" button under the codeblock. This button will redirect the reader to the full screen **\<try-it-page>** component. Here is what the author does:
 
 ```md[markdown document]
     ```javascript[JavaScript]
@@ -73,7 +73,7 @@ The **\<try-it-button> component** acts a bit simpler: it will only add a "Try I
     ```
     <try-it-button id="1"></try-it-button>
 ```
-Result for the reader is below. He/she can press TryIt button and will be redirected to full-screen - **\<try-it-page>** with the same code snippet:
+Result for the reader is below. He/she can click TryIt button and will be redirected to full-screen - **\<try-it-page>** with the same code snippet:
 
 ```javascript[JavaScript]
 'use strict'
@@ -86,18 +86,18 @@ window.sayHi()
   
 <p style="margin:0; height:12px;">&nbsp;</p> 
 
-**\<try-it-page> component** occupies a full page, it is not used in markdown documents. The  page containing this component should be added (by developer) to the project into ***/pages*** directory on setup process. This page looks like: 
+**\<try-it-page> component** takes up a full page, it is not used in markdown documents. The  page containing this component must be added (by developer) to the project into ***/pages*** directory on setup process. This page source looks like this: 
 
 ```html[code.vue]
 <template>
   <try-it-page />
 </template>
 ```
-It behaves completely like \<try-it-block>, but on a separate page. The reader after exploring code example will return to reading page with the button "Go Back To Continue Reading". 
+It behaves completely like \<try-it-block>, but on a separate page.  After exploring code example the reader will return back to reading page with the button "Go Back To Continue Reading". 
 
 <p style="margin:0; height:8px;">&nbsp;</p>
 
-**\<try-it-img>** component is additional, complementary. It adds easy solution to display images located in ***/assets/images*** folder. 
+**\<try-it-img>** component is additional, complementary. It adds simple solution for displying images located in ***/assets/images*** folder. 
 
 
 ### Setup
@@ -143,7 +143,7 @@ Add into ***css section*** in ***nuxt.config.js*** links to css files of CodeMir
        ],
 ```
 
-Create page for \<try-it-page>:
+Create page for implementing  \<try-it-page> component:
 
 ```html[code.vue]
 <template>
@@ -180,7 +180,7 @@ The static directory is important for Try-It components execution process, it ke
 
 ### `store`
 
-Store is used for Try-It component settings, this folder should be kept.
+Store is used for Try-It-Components settings, this folder should be kept.
 
 ### `pages`
 
@@ -190,6 +190,7 @@ Text of this file is given hereabove in ***Setup*** section.
 
 ## Configuration
 ### `Settings`
+
 Options JSON:
 
 ```json[options]
@@ -215,9 +216,9 @@ Options JSON:
 | buttons.run | button caption for RUN button in \<try-it-block> and \<try-it-page>  components |
 | buttons.reset | button caption for RESET button in \<try-it-block> and \<try-it-page>  components |
 | buttons.value | button caption for EVALUATE button in \<try-it-block> and \<try-it-page>  components |
-| buttons.fullScreen | button caption for button in \<try-it-block> component (same action as TRY-IT button |
+| buttons.fullScreen | button caption for FULL SCREEN button in \<try-it-block> component (same action as TRY-IT button |
 | buttons.backToRead | button caption for GO BACK action in \<try-it-page>  component |
-| code  | page name where \<try-it-page> component is put|
+| code  | the page name where \<try-it-page> component is located|
 | theme  | the CodeMirror theme name  (corespondent css should be added to ***nuxt.config.js***, section css) |
 
 --------------------------  
@@ -236,7 +237,7 @@ Options JSON:
 ```
 --------------
 #### \<try-it-button>, \<try-it-block>
-* **id** (string) is required. The uer should check that all \<try-it-...> items have different id-s on the same Markdown page.
+* **id** (string) is required. The user should check that all \<try-it-...> items have different id-s on the same Markdown page.
 * **theme** (string) - not required. Used for CodeMirror theme, which can be changed for each \<try-it-block> on the same page. Make sure that css file for the theme is included in ***nuxt.config.js*** (CSS section). 
 
 > The CodeMirror theme for \<try-it-page> is taken from **options** (see below).  
@@ -254,26 +255,32 @@ Options JSON:
 
 ### How it works
 
-Step *Convert Regular Code Block into the CodeMirror Code Block*: 
+Action *Convert Regular Code Block into the CodeMirror Code Block*: 
 
 Applies only for the \<try-it-block> component. A CodeMirror instance is created and populated with code block text extracted from a regular code block.  Regular code block is removed.
 
-Step *Execute Run command*: 
+Action *Execute Run command*: 
 
 An iFrame is inserted into the output block; it is filled with the certain HTML document, built on base of the text, populated into the codeMirror screen. This HTML document is rendered by browser and displayed in the output window. If \<script> tag is found in the HTML, script is executed as usual.  
 
-If code block's type is "html" it is copied into iFrame without any change.
+If code block's type is "html", it is copied into iFrame without any change.
 
-It code block's type is "js" or "javascript",  initial JavaScript snippet is wrapped into an html-template.
+It code block's type is "js" or "javascript",  the initial JavaScript snippet is wrapped into an HTML template.
 
 Any other type of code block is not accepted.
 
 HTML template for the JavaScript snippet uses two external files: myConsole.css and myConsole.js. CSS is used to format output window,  JS - to intercept console commands and display result in the HTML document. 
 
-Step *Execute Evaluate command*:
+Action *Execute Evaluate command*:
 
 Applies only for JavaScript snippets in the form of expression.
 It is rendered using the same HTML template with one addition: the evaluated expression is wrapped into the *console.log()* command.
+
+Action *Call Try-It-Page*:
+
+The original codeblock text, page name and \<try-it-...> component id are stored in the vuex-store. Control is moved to the page, containing \<try-it-page> component. 
+
+When the reader wants to go back from \<try-it-page>, returning page name and component #id are taken from the Store.  
 
 
 ### Acknowlegments
