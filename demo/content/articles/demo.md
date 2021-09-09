@@ -17,6 +17,7 @@ Example with ALERT (no console output):
 > Remarks:
 > * the code block is editable;
 > * the button Run wil execute JavaScript;
+> * the user can update it: type "console.log" instead of "alert"
 > * the button Reset will restore the original code block after user makes changes to the code;
 > * the button Full will redirect to Full Screen mode
 
@@ -46,7 +47,7 @@ window.sayHi()
 Full screen can be reached only from "**block**" or "**button**" modes.
 Full screen mode allows user to edit/run/evaluate code block and then return to continue reading of the markdown document.  
 
-#### Button and Full Screen mode (HTML document) 
+#### Example: Button and Full Screen mode (HTML document) 
 ```html[example]
 <html>
  <head>
