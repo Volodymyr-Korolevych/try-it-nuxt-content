@@ -1,5 +1,5 @@
 ---
-title: Try-It Module description 
+title: Try-It Module
 description: 
 ---
 <p>&nbsp;</p>
@@ -7,7 +7,7 @@ description:
 ### Introduction  
 
 Try-It module is created specifically for nuxt/content environment.
-It contains couple of vue components which do convertion of code-blocks into editable and executable ones (using CodeMirror Editor).
+It contains couple of vue components which do conversion of code-blocks into editable and executable ones (using CodeMirror Editor).
 
 Try-It components are useful for technical authors who use code snippets to demonstrate JavaScript or HTML language specific examples or behaviours. 
 
@@ -48,7 +48,7 @@ Once a setup is complete the author will apply **\<try-it-block>** or **\<try-it
 
 When rendering a page, the **\<try-it-block> component** will convert a code block into an editable codeMirror snippet and add an output window whose role is to display HTML output for html snippets and CONSOLE output for JavaScript snippets (by clicking the Run button). 
 
-Finally, the reader will see the following picture:
+After all, the reader will have the following editable codeblock and clickable buttons:
 
 ```javascript[JavaScript]
 'use strict'

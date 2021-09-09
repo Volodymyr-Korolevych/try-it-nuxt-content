@@ -2,7 +2,7 @@
 
 ### Introduction
 Try-It module is created specifically for nuxt/content environment.
-It contains couple of vue components which do convertion of code-blocks into editable and executable ones (with usage of CodeMirror Editor).
+It contains couple of vue components which do conversion of code-blocks into editable and executable ones (with usage of CodeMirror Editor).
 
 Try-It components are useful for technical authors who use code snippets to demonstrate JavaScript or HTML language specific examples or behaviours. 
 

@@ -11,6 +11,9 @@
       <NuxtLink  :to="{ name: 'slug', params: { slug: 'demo' } }" >
         Demo
       </NuxtLink>
+      <a href="https://github.com/Volodymyr-Korolevych/try-it-nuxt-content" target="_blank">
+        Github Link
+      </a>
     </div>
   </div>
 </template>
@@ -19,9 +22,9 @@ h1 {
   @apply w-full my-6 flex justify-center font-bold text-4xl;
 }
 span {
-  @apply ml-2 bg-gray-300 text-green-800;
+  @apply mx-4 px-2 bg-gray-300 text-green-800;
 }
 a {
-  @apply flex m-6 justify-center text-2xl font-bold text-green-600 bg-gray-300 px-6 py-4;
+  @apply flex m-4 justify-center text-2xl font-bold text-green-600 bg-gray-300 px-6 py-3;
 }
 </style>
