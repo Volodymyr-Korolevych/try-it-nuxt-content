@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-content-module-try-it",
+  "name": "nuxt-content-try-it",
   "version": "1.0.0",
-  "description": "try-it-block (js, html) for nuxt/content",
+  "description": "try-it-module (for js, html) for nuxt/content",
   "keywords": [
     "nuxt",
     "nuxt.js",
