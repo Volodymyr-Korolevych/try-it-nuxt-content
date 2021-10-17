@@ -84,7 +84,7 @@ Insert following lines into ***nuxt.config.js***
 modules: [
    '@nuxt/content',
    . . .
-   'nuxt-content-try-it-module'
+   'nuxt-content-try-it'
 ],
   tryIt: {
     buttons: {
@@ -99,7 +99,7 @@ or use shorter notation:
 modules: [
    '@nuxt/content',
    . . .
-   ['nuxt-content-try-it-module',
+   ['nuxt-content-try-it',
      {
        buttons: {
         . . .

@@ -68,6 +68,16 @@ export default function (moduleOptions) {
     console.error('try to create dir "assets/images"')
   }
 
+    // make sure 'assets/css/' exists to support components CSS 
+    try {
+      if (!existsSync('assets/css')) {
+        console.log('No dir "assets/css". Create empty dir ')
+        if (!existsSync('assets/css')) mkdirSync('assets/css', { recursive: true });
+      }
+    } catch(err) {
+      console.error('try to create dir "assets/css"')
+    }
+
   // move css to assets/css
   path = resolve(__dirname, 'assets/css')
   for (const file of readdirSync(path)) {

@@ -18,8 +18,7 @@
   ],
   "repository": "https://github.com/Volodymyr-Korolevych/try-it-nuxt-content",
   "license": "MIT",
-  "private": true,
-  "files": [
+    "files": [
     "src"
   ],
   "main": "src/module.js",
