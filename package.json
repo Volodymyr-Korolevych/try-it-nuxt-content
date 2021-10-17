@@ -1,6 +1,6 @@
 {
   "name": "nuxt-content-try-it",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "try-it-module (for js, html) for nuxt/content",
   "keywords": [
     "nuxt",
@@ -18,7 +18,7 @@
   ],
   "repository": "https://github.com/Volodymyr-Korolevych/try-it-nuxt-content",
   "license": "MIT",
-    "files": [
+  "files": [
     "src"
   ],
   "main": "src/module.js",
